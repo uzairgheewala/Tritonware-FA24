@@ -35,9 +35,9 @@ public class CharacterInstance
         currentInventory = new List<ItemBase>(baseCharacter.inventory);
 
         currentRelationships = new Dictionary<string, Relationship>();
-        foreach (var rel in baseCharacter.relationships)
+        foreach (var rel in baseCharacter.relationships.relationshipLevels)
         {
-            currentRelationships.Add(rel.characterName, rel);
+            currentRelationships.Add(rel.Key, baseCharacter.relationships);
         }
     }
 
