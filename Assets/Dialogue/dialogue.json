@@ -1,0 +1,22 @@
+{
+    "characterName": "Character Name",
+    "sentences": [
+        {
+            "text": "Hello! How are you?",
+            "choices": [
+                {
+                    "choiceText": "I'm good, thanks!",
+                    "nextDialogue": "nextDialogue1"
+                },
+                {
+                    "choiceText": "Not so well.",
+                    "nextDialogue": "nextDialogue2"
+                }
+            ]
+        },
+        {
+            "text": "What do you want to do next?",
+            "choices": []
+        }
+    ]
+}

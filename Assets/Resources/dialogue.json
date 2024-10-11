@@ -1,0 +1,22 @@
+{
+    "characterName": "Character Name",
+    "sentences": [
+        {
+            "text": "First sentence.",
+            "choices": [
+                {
+                    "choiceText": "Choice 1",
+                    "nextDialogue": "NextDialogue1"
+                },
+                {
+                    "choiceText": "Choice 2",
+                    "nextDialogue": "NextDialogue2"
+                }
+            ]
+        },
+        {
+            "text": "Second sentence.",
+            "choices": null
+        }
+    ]
+}
