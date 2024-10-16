@@ -13,14 +13,16 @@ public class CharacterManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else 
-        { 
-            Instance = this; 
-        } 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            Logger.LogWarning("Duplicate CharacterManager instance destroyed.");
+        }
+        else
+        {
+            Instance = this;
+            Logger.Log("CharacterManager instance created.");
+        }
     }
 
     void Start()
@@ -34,7 +36,7 @@ public class CharacterManager : MonoBehaviour
 
     void HandleRelationshipChange(string otherCharacterName, float newValue)
     {
-        Debug.Log($"Relationship with {otherCharacterName} changed to {newValue}");
+        Logger.Log($"Relationship with {otherCharacterName} changed to {newValue}");
     }
 
     void InitializeCharacters()
@@ -44,6 +46,7 @@ public class CharacterManager : MonoBehaviour
         {
             CharacterInstance instance = new CharacterInstance(character);
             activeCharacters.Add(character.characterName, instance);
+            Logger.Log($"Character {character.characterName} initialized.");
         }
     }
 
@@ -53,7 +56,7 @@ public class CharacterManager : MonoBehaviour
             return instance;
         else
         {
-            Debug.LogError($"Character not found: {name}");
+            Logger.LogError($"Character not found: {name}");
             return null;
         }
     }
@@ -101,14 +104,22 @@ public class CharacterInstance
                 relationshipValue = rel.relationshipValue
             });
         }
+
+        Logger.Log($"CharacterInstance created for {baseData.characterName}");
     }
 
     public void UpdateRelationship(string characterName, int delta)
     {
         if (currentRelationships.TryGetValue(characterName, out Relationship relationship))
         {
+            float oldValue = relationship.relationshipValue;
             relationship.relationshipValue = Mathf.Clamp(relationship.relationshipValue + delta, -100, 100);
+            Logger.Log($"Relationship between {baseData.characterName} and {characterName} changed from {oldValue} to {relationship.relationshipValue}");
             OnRelationshipChanged.Invoke(characterName, relationship.relationshipValue);
+        }
+        else
+        {
+            Logger.LogWarning($"Relationship with {characterName} does not exist for {baseData.characterName}");
         }
     }
 
@@ -116,31 +127,42 @@ public class CharacterInstance
     {
         foreach (var relationship in currentRelationships.Values)
         {
+            float oldValue = relationship.relationshipValue;
             if (relationship.relationshipValue > 0)
                 relationship.relationshipValue = Mathf.Max(relationship.relationshipValue - baseData.decayRate * Time.deltaTime, 0);
             else if (relationship.relationshipValue < 0)
                 relationship.relationshipValue = Mathf.Min(relationship.relationshipValue + baseData.decayRate * Time.deltaTime, 0);
+
+            if (oldValue != relationship.relationshipValue)
+            {
+                Logger.Log($"Relationship with {relationship.characterName} decayed from {oldValue} to {relationship.relationshipValue}");
+            }
         }
     }
 
     public void AddItem(ItemBase item)
     {
         currentInventory.Add(item);
+        Logger.Log($"{baseData.characterName} added {item.itemName} to inventory.");
     }
 
     public void RemoveItem(ItemBase item)
     {
         currentInventory.Remove(item);
+        Logger.Log($"{baseData.characterName} removed {item.itemName} from inventory.");
     }
 
     public bool HasItem(ItemBase item)
     {
-        return currentInventory.Contains(item);
+        bool hasItem = currentInventory.Contains(item);
+        Logger.Log($"{baseData.characterName} has item {item.itemName}: {hasItem}");
+        return hasItem;
     }
 
     public Dialogue GenerateDialogue()
     {
-        Dialogue d = new Dialogue();//"Uzi", new List(new Sentence("Hello", new List(new Choice("h", "h")))));
-        return d;
+        Logger.Log($"{baseData.characterName} is generating dialogue.");
+        Dialogue dialogue = new Dialogue();
+        return dialogue;
     }
 }

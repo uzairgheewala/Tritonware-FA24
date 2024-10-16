@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[CreateAssetMenu(fileName = "NewCharacter", menuName = "Characters/CharacterBase")]
 public class CharacterBase : ScriptableObject {
 
     public string characterName;

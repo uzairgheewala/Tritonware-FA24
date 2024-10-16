@@ -5,27 +5,36 @@ public class DialogueLoader : MonoBehaviour
     public TextAsset dialogueJson; 
     public Dialogue dialogue; 
 
+    void Start()
+    {
+        LoadDialogue();
+    }
 
     public void LoadDialogue()
     {
-
         if (dialogueJson != null)
         {
             dialogue = JsonUtility.FromJson<Dialogue>(dialogueJson.text);
-            Debug.Log("Dialogue loaded successfully from JSON for " + gameObject.name);
+            Logger.Log("Dialogue loaded successfully from JSON for " + gameObject.name);
         }
         else if (dialogue == null) // If no JSON file and no inspector dialogue, log error
         {
-            Debug.LogError("No dialogue available. Please assign a JSON file or define dialogue in the Inspector.");
+            Logger.LogError("No dialogue available. Please assign a JSON file or define dialogue in the Inspector.");
             return; // Exit if no dialogue is found
         }
 
         // Ensure dialogue has been loaded or defined
         if (dialogue != null)
         {
-            // Additional logging for debugging
-            Debug.Log("Character: " + dialogue.characterName);
-            Debug.Log("First Sentence: " + dialogue.sentences[0].text);
+            Logger.Log($"Character: {dialogue.characterName}");
+            if (dialogue.sentences != null && dialogue.sentences.Count > 0)
+            {
+                Logger.Log($"First Sentence: {dialogue.sentences[0].text}");
+            }
+            else
+            {
+                Logger.LogWarning("Dialogue has no sentences.");
+            }
         }
     }
 
@@ -34,7 +43,8 @@ public class DialogueLoader : MonoBehaviour
         // Start the dialogue when the spacebar is pressed
         if (Input.GetKeyDown(KeyCode.Space) && dialogue != null)
         {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            Logger.Log("Dialogue started via spacebar.");
         }
     }
 }

@@ -29,41 +29,51 @@ public class CharacterDisplay : MonoBehaviour, IPointerClickHandler
 
         if (characterInstance.animatorController != null)
             animator.runtimeAnimatorController = characterInstance.animatorController;
+        
+        Logger.Log($"CharacterDisplay initialized for {characterInstance.baseData.characterName}");
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Logger.Log($"Clicked on {characterInstance.baseData.characterName}");
         OnInteract();
     }
 
     public void OnInteract()
     {
         Dialogue dialogue = characterInstance.GenerateDialogue();
-        dialogueManager.StartDialogue(dialogue);
+        dialogueManager.LoadDialogue(dialogue);
+        dialogueManager.StartDialogue();
+        Logger.Log($"{characterInstance.baseData.characterName} interaction started.");
     }
 
     public void SetWalking(bool isWalking)
     {
         animator.SetBool("IsWalking", isWalking);
+        Logger.Log($"{characterInstance.baseData.characterName} walking state: {isWalking}");
     }
 
     public void SetInteracting(bool isInteracting)
     {
         animator.SetBool("IsInteracting", isInteracting);
+        Logger.Log($"{characterInstance.baseData.characterName} interacting state: {isInteracting}");
     }
 
     public void SetSuspecting(bool isSuspecting)
     {
         animator.SetBool("IsSuspecting", isSuspecting);
+        Logger.Log($"{characterInstance.baseData.characterName} suspecting state: {isSuspecting}");
     }
 
     public void Die()
     {
         animator.SetTrigger("Die");
+        Logger.Log($"{characterInstance.baseData.characterName} has died.");
     }
 
     public void UpdateDirection(Vector2 direction)
     {
-        
+        Logger.Log($"{characterInstance.baseData.characterName} direction updated to {direction}");
+        // Implement direction update logic if needed
     }
 }
