@@ -1,0 +1,34 @@
+{
+    "characterName": "UziG",
+    "sentences": [
+        {
+            "text": "Hello! How are you?",
+            "choices": [
+                {
+                    "choiceText": "I'm good, thanks!",
+                    "nextDialogue": {
+                        "characterName": "UziG",
+                        "sentences": [
+                            {
+                                "text": "That's great to hear!",
+                                "choices": []
+                            }
+                        ]
+                    }
+                },
+                {
+                    "choiceText": "Not so well.",
+                    "nextDialogue": {
+                        "characterName": "UziG",
+                        "sentences": [
+                            {
+                                "text": "I'm sorry to hear that.",
+                                "choices": []
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
