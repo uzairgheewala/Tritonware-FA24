@@ -1,26 +1,48 @@
-    using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections; // Make sure to include this for IEnumerator
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get; private set; } // Singleton instance
+
     public GameObject dialoguePanel; // Assign via Inspector
     public TextMeshProUGUI dialogueText; // Assign via Inspector
     public TextMeshProUGUI characterNameText; // Assign via Inspector
     public Button[] choiceButtons; // Assign via Inspector
+    public Image characterImage; // UI Image for the character's PNG sprite
+    public Canvas dialogueCanvas; // Persistent canvas for dialogue
 
     public TextAsset dialogueJson; // Assign via Inspector or programmatically
     public Dialogue dialogue; // Dialogue data
+    public Sprite characterSprite; // Character sprite for current dialogue
 
     private Queue<Sentence> sentences;
+    private AudioSource audioSource; // AudioSource for playing sounds
+    public AudioClip typingSound; // Assign via Inspector
+
+    void Awake()
+    {
+        // Ensure only one instance of DialogueManager exists
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scenes
+            audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource if not present
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate
+        }
+    }
 
     void Start()
     {
         sentences = new Queue<Sentence>();
         dialoguePanel.SetActive(false);
-        // LoadDialogue();
-        // StartDialogue();
+        characterImage.enabled = false; // Hide character image by default
     }
 
     public void LoadDialogue(Dialogue dial = null)
@@ -48,7 +70,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue newDialogue = null)
     {
-
         if (newDialogue != null)
         {
             dialogue = newDialogue;
@@ -60,6 +81,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialoguePanel.SetActive(true);
+        characterImage.enabled = true; // Show the character image when dialogue starts
+        characterImage.sprite = characterSprite; // Set the sprite for the current character
         sentences.Clear();
 
         characterNameText.text = dialogue.characterName;
@@ -81,9 +104,26 @@ public class DialogueManager : MonoBehaviour
         }
 
         Sentence currentSentence = sentences.Dequeue();
-        dialogueText.text = currentSentence.text;
-
+        StartCoroutine(TypeSentence(currentSentence.text)); // Start typing the sentence
         DisplayChoices(currentSentence.choices);
+    }
+
+    private IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = ""; // Clear the dialogue text
+
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            dialogueText.text += sentence[i]; // Add one letter at a time
+
+            // Play typing sound for every other character
+            if (typingSound != null && i % 2 == 0) // Play sound if the index is even
+            {
+                audioSource.PlayOneShot(typingSound);
+            }
+
+            yield return new WaitForSeconds(0.05f); // Wait for a short time before adding the next letter
+        }
     }
 
     void Update()
@@ -141,9 +181,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         dialoguePanel.SetActive(false);
+        characterImage.enabled = false; // Hide the character image when dialogue ends
         Debug.Log("Dialogue ended.");
     }
 }

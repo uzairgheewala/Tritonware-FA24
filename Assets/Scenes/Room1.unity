@@ -988,10 +988,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e30292185ce9b148918b0c7ed6273de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueJson: {fileID: 4900000, guid: 766beee5ecbd3e046bf25e051ed92f5f, type: 3}
+  dialogueJson: {fileID: 4900000, guid: cdcb21f85d7285a46b74551a6e4b85fc, type: 3}
   dialogue:
     characterName: 
     sentences: []
+  characterSprite: {fileID: 21300000, guid: 3a7e71f4797724646ab5190c4b953af2, type: 3}
+  typingSound: {fileID: 8300000, guid: 8264f02733c03c64e8f42e5753a91399, type: 3}
 --- !u!114 &1944023956
 MonoBehaviour:
   m_ObjectHideFlags: 0
