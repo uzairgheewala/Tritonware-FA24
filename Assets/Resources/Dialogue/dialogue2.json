@@ -1,0 +1,99 @@
+{
+    "characterName": "Alex",
+    "sentences": [
+        {
+            "text": "Hello there! How are you doing today?",
+            "choices": [
+                {
+                    "choiceText": "I'm doing well, thank you!",
+                    "nextDialogue": {
+                        "characterName": "Alex",
+                        "sentences": [
+                            {
+                                "text": "That's great to hear! It's a lovely day, isn't it?",
+                                "choices": [
+                                    {
+                                        "choiceText": "Yes, it is!",
+                                        "nextDialogue": null
+                                    },
+                                    {
+                                        "choiceText": "Actually, I prefer rainy days.",
+                                        "nextDialogue": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "choiceText": "Not so good...",
+                    "nextDialogue": {
+                        "characterName": "Alex",
+                        "sentences": [
+                            {
+                                "text": "I'm sorry to hear that. Is there anything I can do to help?",
+                                "choices": [
+                                    {
+                                        "choiceText": "Just talking helps.",
+                                        "nextDialogue": null
+                                    },
+                                    {
+                                        "choiceText": "I need some space right now.",
+                                        "nextDialogue": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "text": "By the way, have you heard about the festival coming up next week?",
+            "choices": [
+                {
+                    "choiceText": "Yes! I'm excited for it.",
+                    "nextDialogue": {
+                        "characterName": "Alex",
+                        "sentences": [
+                            {
+                                "text": "Me too! It's going to be amazing. We should go together!",
+                                "choices": [
+                                    {
+                                        "choiceText": "Absolutely!",
+                                        "nextDialogue": null
+                                    },
+                                    {
+                                        "choiceText": "Maybe, I'll think about it.",
+                                        "nextDialogue": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "choiceText": "No, I haven't heard about it.",
+                    "nextDialogue": {
+                        "characterName": "Alex",
+                        "sentences": [
+                            {
+                                "text": "Oh, you should definitely check it out! It's going to be a lot of fun.",
+                                "choices": [
+                                    {
+                                        "choiceText": "Thanks for the info!",
+                                        "nextDialogue": null
+                                    },
+                                    {
+                                        "choiceText": "I might pass on it.",
+                                        "nextDialogue": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

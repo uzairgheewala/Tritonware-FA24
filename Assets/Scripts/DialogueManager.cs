@@ -2,92 +2,98 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections; // Make sure to include this for IEnumerator
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get; private set; } // Singleton instance
+
     public GameObject dialoguePanel; // Assign via Inspector
     public TextMeshProUGUI dialogueText; // Assign via Inspector
     public TextMeshProUGUI characterNameText; // Assign via Inspector
     public Button[] choiceButtons; // Assign via Inspector
+    public Image characterImage; // UI Image for the character's PNG sprite
+    public Canvas dialogueCanvas; // Persistent canvas for dialogue
 
     public TextAsset dialogueJson; // Assign via Inspector or programmatically
     public Dialogue dialogue; // Dialogue data
+    public Sprite characterSprite; // Character sprite for current dialogue
 
     private Queue<Sentence> sentences;
-    //private Queue<List<Choice>> choicesQueue;
+    private AudioSource audioSource; // AudioSource for playing sounds
+    public AudioClip typingSound; // Assign via Inspector
+
+    void Awake()
+    {
+        // Ensure only one instance of DialogueManager exists
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scenes
+            audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource if not present
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate
+        }
+    }
 
     void Start()
     {
         sentences = new Queue<Sentence>();
-        //choicesQueue = new Queue<List<Choice>>();
         dialoguePanel.SetActive(false);
-        Logger.Log("DialogueManager initialized.");
-        LoadDialogue();
-        StartDialogue();
+        characterImage.enabled = false; // Hide character image by default
     }
 
-    public void LoadDialogue(Dialogue dial=null)
+    public void LoadDialogue(Dialogue dial = null)
     {
         dialogue = dial;
         if (dialogueJson != null)
         {
             dialogue = JsonUtility.FromJson<Dialogue>(dialogueJson.text);
-            Logger.Log("Dialogue loaded successfully from JSON." + dialogue.characterName + dialogue.sentences);
         }
-        else if (dialogue == null) // If no JSON file and no dialogue assigned, log error
+        else if (dialogue == null)
         {
-            Logger.LogError("No dialogue available. Please assign a JSON file or define dialogue in the Inspector.");
+            Debug.LogError("No dialogue available. Please assign a JSON file or define dialogue in the Inspector.");
             return;
         }
 
-        // Check if dialogue has been loaded correctly
-        if (dialogue != null)
+        if (dialogue != null && dialogue.sentences != null && dialogue.sentences.Count > 0)
         {
-            Logger.Log($"Character: {dialogue.characterName}");
-            if (dialogue.sentences != null && dialogue.sentences.Count > 0)
-            {
-                Logger.Log($"First Sentence: {dialogue.sentences[0].text}");
-            }
-            else
-            {
-                Logger.LogWarning("Dialogue has no sentences.");
-            }
+            Debug.Log($"Character: {dialogue.characterName}, First Sentence: {dialogue.sentences[0].text}");
+        }
+        else
+        {
+            Debug.LogWarning("Dialogue has no sentences.");
         }
     }
 
-    public void StartDialogue()
+    public void StartDialogue(Dialogue newDialogue = null)
     {
+        if (newDialogue != null)
+        {
+            dialogue = newDialogue;
+        }
         if (dialogue == null)
         {
-            Logger.LogError("Dialogue is null. Cannot start dialogue.");
+            Debug.LogError("Dialogue is null. Cannot start dialogue.");
             return;
         }
 
         dialoguePanel.SetActive(true);
+        characterImage.enabled = true; // Show the character image when dialogue starts
+        characterImage.sprite = characterSprite; // Set the sprite for the current character
         sentences.Clear();
-        //choicesQueue.Clear();
 
         characterNameText.text = dialogue.characterName;
-        Logger.Log($"Starting dialogue with {dialogue.characterName}");
 
         foreach (var sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
-            /*
-            if (sentence.choices != null)
-            {
-                choicesQueue.Enqueue(sentence.choices);
-            }
-            else
-            {
-                choicesQueue.Enqueue(new List<Choice>());
-            }
-            */
         }
 
         DisplayNextSentence();
     }
-
 
     public void DisplayNextSentence()
     {
@@ -98,12 +104,26 @@ public class DialogueManager : MonoBehaviour
         }
 
         Sentence currentSentence = sentences.Dequeue();
-        dialogueText.text = currentSentence.text;
-        Logger.Log($"Displaying sentence: {currentSentence.text}");
-
-        //List<Choice> currentChoices = choicesQueue.Dequeue();
-        //DisplayChoices(currentChoices);
+        StartCoroutine(TypeSentence(currentSentence.text)); // Start typing the sentence
         DisplayChoices(currentSentence.choices);
+    }
+
+    private IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = ""; // Clear the dialogue text
+
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            dialogueText.text += sentence[i]; // Add one letter at a time
+
+            // Play typing sound for every other character
+            if (typingSound != null && i % 2 == 0) // Play sound if the index is even
+            {
+                audioSource.PlayOneShot(typingSound);
+            }
+
+            yield return new WaitForSeconds(0.05f); // Wait for a short time before adding the next letter
+        }
     }
 
     void Update()
@@ -114,11 +134,6 @@ public class DialogueManager : MonoBehaviour
             {
                 DisplayNextSentence();
             }
-            /*
-            if (choicesQueue.Count == 0 || choiceButtons[0].gameObject.activeSelf == false)
-            {
-                DisplayNextSentence();
-            }*/
         }
     }
 
@@ -130,7 +145,6 @@ public class DialogueManager : MonoBehaviour
             {
                 button.gameObject.SetActive(false);
             }
-            Logger.Log("No choices to display.");
             return;
         }
 
@@ -141,19 +155,11 @@ public class DialogueManager : MonoBehaviour
                 choiceButtons[i].gameObject.SetActive(true);
 
                 TextMeshProUGUI buttonText = choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-                if (buttonText != null)
-                {
-                    buttonText.text = choices[i].choiceText;
-                }
-                else
-                {
-                    Logger.LogError($"TextMeshProUGUI component not found in button {i}");
-                }
+                buttonText.text = choices[i].choiceText;
 
                 int choiceIndex = i;
                 choiceButtons[i].onClick.RemoveAllListeners();
                 choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choices[choiceIndex]));
-                Logger.Log($"Displaying choice {i}: {choices[i].choiceText}");
             }
             else
             {
@@ -164,8 +170,6 @@ public class DialogueManager : MonoBehaviour
 
     void OnChoiceSelected(Choice choice)
     {
-        Logger.Log($"Choice selected: {choice.choiceText}");
-
         if (choice.nextDialogue != null)
         {
             LoadDialogue(choice.nextDialogue);
@@ -176,38 +180,12 @@ public class DialogueManager : MonoBehaviour
             DisplayNextSentence();
         }
     }
-    /*
-    void OnChoiceSelected(string nextDialogue)
+
+    public void EndDialogue()
     {
-        Logger.Log($"Choice selected: {nextDialogue}");
-
-        if (!string.IsNullOrEmpty(nextDialogue))
-        {
-            // Attempt to load the next dialogue JSON
-            TextAsset nextDialogueJson = Resources.Load<TextAsset>(nextDialogue);
-            if (nextDialogueJson != null)
-            {
-                dialogueJson = nextDialogueJson;
-                LoadDialogue();
-                StartDialogue();
-            }
-            else
-            {
-                Logger.LogError($"Next dialogue JSON '{nextDialogue}' not found.");
-                DisplayNextSentence();
-            }
-        }
-        else
-        {
-            DisplayNextSentence();
-        }
-    }*/
-
-
-    void EndDialogue()
-    {
-        //dialoguePanel.SetActive(false);
-        Logger.Log("Dialogue ended.");
+        dialoguePanel.SetActive(false);
+        characterImage.enabled = false; // Hide the character image when dialogue ends
+        Debug.Log("Dialogue ended.");
     }
 }
 
@@ -229,5 +207,5 @@ public class Sentence
 public class Choice
 {
     public string choiceText;
-    public Dialogue nextDialogue; 
+    public Dialogue nextDialogue;
 }
