@@ -60,6 +60,12 @@ public class DialogueManager : MonoBehaviour
 
         if (dialogue != null && dialogue.sentences != null && dialogue.sentences.Count > 0)
         {
+            // Replace [char] with the player's name in each sentence
+            for (int i = 0; i < dialogue.sentences.Count; i++)
+            {
+                dialogue.sentences[i].text = dialogue.sentences[i].text.Replace("[char]", DialogueLoader.Instance.playerName);
+            }
+
             Debug.Log($"Character: {dialogue.characterName}, First Sentence: {dialogue.sentences[0].text}");
         }
         else
@@ -67,6 +73,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Dialogue has no sentences.");
         }
     }
+
+
 
     public void StartDialogue(Dialogue newDialogue = null)
     {

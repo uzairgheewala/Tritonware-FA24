@@ -18,11 +18,12 @@ public class GameManager : MonoBehaviour
     DialogueManager dialogueManager;
     CharacterManager characterManager;
 
+    public GameObject nameInputPanel; // Assign the name input panel in the Inspector
+
     public void ChangeState(GameState newState)
     {
         currentGameState = newState;
         Logger.Log($"Game state changed to {newState}");
-        // Implement state-specific logic
         switch (newState)
         {
             case GameState.Playing:
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -47,11 +49,16 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist between scenes if necessary
+            DontDestroyOnLoad(gameObject);
             Logger.Log("GameManager initialized.");
         }
 
         InitializeManagers();
+    }
+
+    void Start()
+    {
+        ShowNameInput(); // Show the name input panel when the game starts
     }
 
     void InitializeManagers()
@@ -63,20 +70,19 @@ public class GameManager : MonoBehaviour
             characterManager = FindObjectOfType<CharacterManager>();
 
         // Initialize other managers similarly
-
-        // Subscribe to events
-        //dialogueManager.OnDialogueEnded += HandleDialogueEnded;
-        // Subscribe to other manager events as needed
     }
 
-    // Example event handler
-    void HandleDialogueEnded()
+    private void ShowNameInput()
     {
-        Logger.Log("Dialogue ended. Resuming gameplay.");
-        // Implement logic to resume game after dialogue
+        if (nameInputPanel != null)
+        {
+            nameInputPanel.SetActive(true); // Show the name input panel
+        }
+        else
+        {
+            Logger.LogWarning("Name input panel is not assigned in GameManager.");
+        }
     }
-
-    // Add methods to control game states, transitions, etc.
 
     public void SetFlag(string flagName, bool value)
     {
