@@ -7,6 +7,22 @@ public class DialogueLoader : MonoBehaviour
     public Sprite characterSprite; // Character sprite to be shown during dialogue
     public AudioClip typingSound; // Assign the typing sound effect here
 
+    private static DialogueLoader instance; // To ensure only one instance exists
+
+    void Awake()
+    {
+        // Implementing Singleton pattern to prevent duplicates
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instance
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Make this object persistent across scenes
+        }
+    }
+
     void Start()
     {
         LoadDialogue();
