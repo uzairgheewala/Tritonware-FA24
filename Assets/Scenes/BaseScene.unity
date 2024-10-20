@@ -1576,6 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameState: 0
+  nameInputPanel: {fileID: 0}
 --- !u!4 &2080214854
 Transform:
   m_ObjectHideFlags: 0

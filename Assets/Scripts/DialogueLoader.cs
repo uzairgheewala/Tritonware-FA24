@@ -6,6 +6,23 @@ public class DialogueLoader : MonoBehaviour
     public Dialogue dialogue; // The dialogue data
     public Sprite characterSprite; // Character sprite to be shown during dialogue
     public AudioClip typingSound; // Assign the typing sound effect here
+    public string playerName;
+
+    public static DialogueLoader Instance { get; private set; }
+
+    void Awake()
+    {
+        // Implementing Singleton pattern to prevent duplicates
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instance
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Make this object persistent across scenes
+        }
+    }
 
     void Start()
     {
@@ -14,19 +31,26 @@ public class DialogueLoader : MonoBehaviour
 
     public void LoadDialogue()
     {
-        if (dialogueJson != null)
+        if (dialogueJson == null)
         {
-            dialogue = JsonUtility.FromJson<Dialogue>(dialogueJson.text);
-            Debug.Log("Dialogue loaded successfully from JSON for " + gameObject.name);
+            Debug.LogError("No JSON file assigned. Please assign a JSON file for dialogue.");
+            return;
         }
-        else if (dialogue == null)
+
+        dialogue = JsonUtility.FromJson<Dialogue>(dialogueJson.text);
+        if (dialogue == null)
         {
-            Debug.LogError("No dialogue available. Please assign a JSON file or define dialogue in the Inspector.");
+            Debug.LogError("Failed to load dialogue. Make sure your JSON format matches the Dialogue class.");
             return; 
         }
 
-        if (dialogue != null && dialogue.sentences != null && dialogue.sentences.Count > 0)
+        if (dialogue.sentences != null && dialogue.sentences.Count > 0)
         {
+            // Replace [char] placeholder with player's name
+            for (int i = 0; i < dialogue.sentences.Count; i++)
+            {
+                dialogue.sentences[i].text = dialogue.sentences[i].text.Replace("[char]", playerName);
+            }
             Debug.Log($"Character: {dialogue.characterName}, First Sentence: {dialogue.sentences[0].text}");
         }
         else
