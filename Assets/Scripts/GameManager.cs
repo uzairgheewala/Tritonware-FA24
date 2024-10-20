@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
