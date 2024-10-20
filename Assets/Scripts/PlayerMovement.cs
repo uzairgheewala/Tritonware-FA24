@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D PlayerRB;
     public SpriteRenderer PlayerSR;
+    public Animator animator;
     public float Speed;
     public float horizontal, vertical;
     private Vector2 previousPosition;
@@ -38,6 +39,12 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         PlayerRB.velocity = new Vector2(horizontal * Speed, vertical * Speed);
+        animator.SetFloat("Speed", Mathf.Abs(horizontal * Speed));
+        if (horizontal * Speed > 0) {
+            PlayerSR.flipX = true;
+        } else if ((horizontal * Speed < 0)) {
+            PlayerSR.flipX = false;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
