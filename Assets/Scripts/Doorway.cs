@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Doorway : MonoBehaviour
 {
@@ -28,10 +29,10 @@ public class Doorway : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && sceneManager != null && !string.IsNullOrEmpty(targetRoomName))
+        if (other.CompareTag("Player") && !string.IsNullOrEmpty(targetRoomName))
         {
             Logger.Log($"Player triggered doorway to {targetRoomName}");
-            sceneManager.TransitionToRoom(targetRoomName, targetEntrancePosition);
+            SceneManager.LoadScene(targetRoomName);
         }
     }
 }
