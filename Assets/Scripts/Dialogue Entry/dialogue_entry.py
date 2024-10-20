@@ -1,11 +1,16 @@
 import tkinter as tk
 <<<<<<< HEAD
+<<<<<<< HEAD
 from tkinter import ttk, messagebox
 import json
 =======
 from tkinter import ttk, messagebox, filedialog, simpledialog
 import json, os
 >>>>>>> main
+=======
+from tkinter import ttk, messagebox, filedialog, simpledialog
+import json, os
+>>>>>>> Uzair
 from tkinter.scrolledtext import ScrolledText
 
 class DialogueEntry:
@@ -15,12 +20,15 @@ class DialogueEntry:
         
         self.dialogue = {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "characterName": "",
             "sentences": []
         }
         
         self.current_sentence = None   
 =======
+=======
+>>>>>>> Uzair
             "characters": []
         }
         
@@ -32,16 +40,23 @@ class DialogueEntry:
         self.selected_sentence_index = None
         self.selected_choice = None
         self.selected_choice_index = None
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> Uzair
 
         self.create_widgets()
         self.update_json_display()
 
     def create_widgets(self):
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         """
 >>>>>>> main
+=======
+        """
+>>>>>>> Uzair
         # Frame for Character Name
         char_frame = ttk.Frame(self.root, padding="10")
         char_frame.grid(row=0, column=0, sticky="W")
@@ -51,11 +66,14 @@ class DialogueEntry:
         self.char_entry.grid(row=0, column=1, padx=5)
         self.char_entry.bind("<FocusOut>", self.set_character_name)
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         # Frame for Sentences
         sentence_frame = ttk.LabelFrame(self.root, text="Add Sentence", padding="10")
         sentence_frame.grid(row=1, column=0, padx=10, pady=5, sticky="EW")
 =======
+=======
+>>>>>>> Uzair
         """
         
         # Frame for Characters
@@ -77,7 +95,10 @@ class DialogueEntry:
         # Frame for Sentences
         sentence_frame = ttk.LabelFrame(self.root, text="Manage Sentences", padding="10")
         sentence_frame.grid(row=2, column=0, padx=10, pady=5, sticky="EW")
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> Uzair
         
         ttk.Label(sentence_frame, text="Sentence Text:").grid(row=0, column=0, sticky="W")
         self.sentence_entry = ttk.Entry(sentence_frame, width=50)
@@ -86,6 +107,7 @@ class DialogueEntry:
         add_sentence_btn = ttk.Button(sentence_frame, text="Add Sentence", command=self.add_sentence)
         add_sentence_btn.grid(row=0, column=2, padx=5)
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         # Frame for Choices
         choice_frame = ttk.LabelFrame(self.root, text="Add Choice", padding="10")
@@ -110,6 +132,8 @@ class DialogueEntry:
         json_frame = ttk.LabelFrame(self.root, text="JSON Output", padding="10")
         json_frame.grid(row=3, column=0, padx=10, pady=5, sticky="NSEW")
 =======
+=======
+>>>>>>> Uzair
         # Listbox to display sentences
         self.sentence_listbox = tk.Listbox(sentence_frame, height=5)
         self.sentence_listbox.grid(row=1, column=0, columnspan=3, sticky="EW", pady=5)
@@ -174,7 +198,10 @@ class DialogueEntry:
         # JSON Display
         json_frame = ttk.LabelFrame(self.root, text="JSON Output", padding="10")
         json_frame.grid(row=7, column=0, padx=10, pady=5, sticky="NSEW")
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> Uzair
         
         self.json_display = ScrolledText(json_frame, width=80, height=20, state='disabled', bg="#f0f0f0")
         self.json_display.pack(fill="both", expand=True)
@@ -191,8 +218,11 @@ class DialogueEntry:
             messagebox.showwarning("Input Error", "Character name cannot be empty.")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     def add_sentence(self):
 =======
+=======
+>>>>>>> Uzair
     def add_character(self):
         char_name = self.new_char_entry.get().strip()
         if not char_name:
@@ -242,7 +272,10 @@ class DialogueEntry:
         if not self.selected_character:
             messagebox.showwarning("No Character Selected", "Please select a character to add sentences.")
             return
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> Uzair
         text = self.sentence_entry.get().strip()
         if not text:
             messagebox.showwarning("Input Error", "Sentence text cannot be empty.")
@@ -251,6 +284,7 @@ class DialogueEntry:
             "text": text,
             "choices": []
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         self.dialogue["sentences"].append(sentence)
         self.current_sentence = sentence  # Set as current sentence for adding choices
@@ -266,6 +300,8 @@ class DialogueEntry:
         next_char = self.next_char_entry.get().strip()
         next_sentence = self.next_sentence_entry.get().strip()
 =======
+=======
+>>>>>>> Uzair
         self.selected_character["sentences"].append(sentence)
         self.sentence_listbox.insert(tk.END, text)
         self.sentence_entry.delete(0, tk.END)
@@ -322,7 +358,10 @@ class DialogueEntry:
         choice_text = self.choice_text_entry.get().strip()
         next_char = self.choice_next_char_entry.get().strip()
         next_sentence = self.choice_next_sentence_entry.get().strip()
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> Uzair
         
         if not choice_text or not next_char or not next_sentence:
             messagebox.showwarning("Input Error", "All choice fields must be filled.")
@@ -341,6 +380,7 @@ class DialogueEntry:
             }
         }
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         self.current_sentence["choices"].append(choice)
         
@@ -362,6 +402,8 @@ class DialogueEntry:
         self.json_display.insert(tk.END, pretty_json)
         self.json_display.configure(state='disabled')
 =======
+=======
+>>>>>>> Uzair
         if self.selected_choice:
             # Edit existing choice
             self.selected_choice["choiceText"] = choice_text
@@ -508,7 +550,10 @@ class DialogueEntry:
         self.json_display.insert(tk.END, pretty_json)
         self.json_display.configure(state='disabled')
         self.save_json_to_file()
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> Uzair
 
 if __name__ == "__main__":
     root = tk.Tk()

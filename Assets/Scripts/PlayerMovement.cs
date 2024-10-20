@@ -10,6 +10,23 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal, vertical;
     private Vector2 previousPosition;
 
+    public static PlayerMovement Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            Logger.LogWarning("Duplicate PlayerMovement instance destroyed.");
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            Logger.Log("PlayerMovement instance created.");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         // After physics updates, check if position has changed
         if (PlayerRB.position != previousPosition)
         {
-            Logger.Log($"Player moved to position: {PlayerRB.position}");
+            //Logger.Log($"Player moved to position: {PlayerRB.position}");
             previousPosition = PlayerRB.position;
         }
     }
