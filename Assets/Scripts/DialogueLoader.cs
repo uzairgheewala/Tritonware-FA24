@@ -4,6 +4,9 @@ public class DialogueLoader : MonoBehaviour
 {
     public TextAsset dialogueJson; 
     public Dialogue dialogue; 
+    public string playerName;
+    public static DialogueLoader Instance { get; private set; }
+
 
     void Start()
     {
