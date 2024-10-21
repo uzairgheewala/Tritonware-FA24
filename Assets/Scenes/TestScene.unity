@@ -238,8 +238,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
-=======
 --- !u!1 &368687682
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +289,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &406798535
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,8 +657,6 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
-=======
 --- !u!1 &1183496668
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +809,6 @@ RectTransform:
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &1209973732
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,12 +913,8 @@ MonoBehaviour:
 <<<<<<< HEAD
   Speed: 4
 =======
-<<<<<<< HEAD
-  Speed: 4
-=======
   Speed: 5
 >>>>>>> main
->>>>>>> origin/Ben
   horizontal: 0
   vertical: 0
 --- !u!50 &1209973737
@@ -1004,11 +994,7 @@ GameObject:
 <<<<<<< HEAD
   - component: {fileID: 1391016157}
 =======
-<<<<<<< HEAD
-  - component: {fileID: 1391016157}
-=======
 >>>>>>> main
->>>>>>> origin/Ben
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1137,9 +1123,6 @@ MonoBehaviour:
 <<<<<<< HEAD
 --- !u!114 &1391016157
 =======
-<<<<<<< HEAD
---- !u!114 &1391016157
-=======
 --- !u!1 &1974490914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,16 +1143,12 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &1974490915
 >>>>>>> main
->>>>>>> origin/Ben
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_GameObject: {fileID: 1391016152}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1179,8 +1158,6 @@ MonoBehaviour:
   target: {fileID: 1209973733}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 1974490914}
   m_Enabled: 1
@@ -1227,7 +1204,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &1998573197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,8 +1336,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
-=======
 --- !u!1 &2080214852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1381,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1421,11 +1394,8 @@ SceneRoots:
   - {fileID: 45523534}
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
-=======
   - {fileID: 368687684}
   - {fileID: 2080214854}
   - {fileID: 1974490917}
   - {fileID: 1183496672}
 >>>>>>> main
->>>>>>> origin/Ben

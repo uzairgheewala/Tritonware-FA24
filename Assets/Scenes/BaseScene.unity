@@ -125,12 +125,8 @@ NavMeshSettings:
 <<<<<<< HEAD
 --- !u!1 &56367749
 =======
-<<<<<<< HEAD
---- !u!1 &56367749
-=======
 --- !u!1 &343241254
 >>>>>>> main
->>>>>>> origin/Ben
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,9 +135,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   - component: {fileID: 56367750}
   - component: {fileID: 56367752}
   - component: {fileID: 56367751}
@@ -533,12 +526,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
   m_GameObject: {fileID: 267890480}
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 343241254}
 >>>>>>> main
->>>>>>> origin/Ben
   m_CullTransparentMesh: 1
 --- !u!1 &368687682
 GameObject:
@@ -593,12 +583,8 @@ Transform:
 <<<<<<< HEAD
 --- !u!1 &420301371
 =======
-<<<<<<< HEAD
---- !u!1 &420301371
-=======
 --- !u!1 &390157206
 >>>>>>> main
->>>>>>> origin/Ben
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -607,17 +593,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   - component: {fileID: 420301372}
   - component: {fileID: 420301375}
   - component: {fileID: 420301374}
   - component: {fileID: 420301373}
   m_Layer: 5
   m_Name: Button
-<<<<<<< HEAD
-=======
 =======
   - component: {fileID: 390157211}
   - component: {fileID: 390157210}
@@ -792,15 +773,11 @@ GameObject:
   m_Layer: 5
   m_Name: Canvas
 >>>>>>> main
->>>>>>> origin/Ben
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!224 &420301372
-=======
 <<<<<<< HEAD
 --- !u!224 &420301372
 =======
@@ -869,16 +846,12 @@ Canvas:
   m_TargetDisplay: 0
 --- !u!224 &407389411
 >>>>>>> main
->>>>>>> origin/Ben
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_GameObject: {fileID: 420301371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -894,8 +867,6 @@ RectTransform:
   m_SizeDelta: {x: 273.838, y: 96.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &420301373
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 407389407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -953,16 +924,12 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587328023
 >>>>>>> main
->>>>>>> origin/Ben
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_GameObject: {fileID: 420301371}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1008,12 +975,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420301371}
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 587328020}
 >>>>>>> main
->>>>>>> origin/Ben
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -1022,12 +986,8 @@ MonoBehaviour:
 <<<<<<< HEAD
   m_Material: {fileID: 0}
 =======
-<<<<<<< HEAD
-  m_Material: {fileID: 0}
-=======
   m_Material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 >>>>>>> main
->>>>>>> origin/Ben
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1038,12 +998,8 @@ MonoBehaviour:
 <<<<<<< HEAD
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
 =======
-<<<<<<< HEAD
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-=======
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 >>>>>>> main
->>>>>>> origin/Ben
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1056,12 +1012,8 @@ MonoBehaviour:
 <<<<<<< HEAD
 --- !u!222 &420301375
 =======
-<<<<<<< HEAD
---- !u!222 &420301375
-=======
 --- !u!222 &587328024
 >>>>>>> main
->>>>>>> origin/Ben
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1070,12 +1022,8 @@ CanvasRenderer:
 <<<<<<< HEAD
   m_GameObject: {fileID: 420301371}
 =======
-<<<<<<< HEAD
-  m_GameObject: {fileID: 420301371}
-=======
   m_GameObject: {fileID: 587328020}
 >>>>>>> main
->>>>>>> origin/Ben
   m_CullTransparentMesh: 1
 --- !u!1 &1037562908
 GameObject:
@@ -1128,12 +1076,8 @@ MonoBehaviour:
 <<<<<<< HEAD
   player: {fileID: 0}
 =======
-<<<<<<< HEAD
-  player: {fileID: 0}
-=======
   player: {fileID: 390157211}
 >>>>>>> main
->>>>>>> origin/Ben
   roomConnections:
   - fromRoomName: Room1
     toRoomName: Room2
@@ -1144,9 +1088,6 @@ MonoBehaviour:
     doorwayPosition: {x: 0, y: 5, z: 0}
     targetEntrancePosition: {x: 9, y: 5, z: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
 --- !u!1 &1049121156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,11 +1163,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049121156}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 =======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &1183496668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,9 +1294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   dialoguePanel: {fileID: 135911497}
   dialogueText: {fileID: 267890482}
   characterNameText: {fileID: 56367751}
@@ -1373,8 +1308,6 @@ MonoBehaviour:
     sentences: []
   characterSprite: {fileID: 0}
   typingSound: {fileID: 0}
-<<<<<<< HEAD
-=======
 =======
   dialoguePanel: {fileID: 587328020}
   dialogueText: {fileID: 343241256}
@@ -1386,7 +1319,6 @@ MonoBehaviour:
     characterName: 
     sentences: []
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!224 &1183496672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1404,22 +1336,16 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_AnchoredPosition: {x: 325.56805, y: 197.18242}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1391480431
-<<<<<<< HEAD
-=======
 =======
   m_AnchoredPosition: {x: 2.7530546, y: 1.4620134}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1253776513
 >>>>>>> main
->>>>>>> origin/Ben
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1428,17 +1354,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   - component: {fileID: 1391480432}
   - component: {fileID: 1391480435}
   - component: {fileID: 1391480434}
   - component: {fileID: 1391480433}
   m_Layer: 5
   m_Name: Button2
-<<<<<<< HEAD
-=======
 =======
   - component: {fileID: 1253776514}
   - component: {fileID: 1253776516}
@@ -1446,7 +1367,6 @@ GameObject:
   m_Layer: 5
   m_Name: Character Name
 >>>>>>> main
->>>>>>> origin/Ben
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1455,12 +1375,8 @@ GameObject:
 <<<<<<< HEAD
 --- !u!224 &1391480432
 =======
-<<<<<<< HEAD
---- !u!224 &1391480432
-=======
 --- !u!224 &1253776514
 >>>>>>> main
->>>>>>> origin/Ben
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1469,20 +1385,13 @@ RectTransform:
 <<<<<<< HEAD
   m_GameObject: {fileID: 1391480431}
 =======
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1391480431}
-=======
   m_GameObject: {fileID: 1253776513}
 >>>>>>> main
->>>>>>> origin/Ben
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_Children:
   - {fileID: 1920083388}
   m_Father: {fileID: 135911498}
@@ -1493,8 +1402,6 @@ RectTransform:
   m_SizeDelta: {x: 273.838, y: 96.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391480433
-<<<<<<< HEAD
-=======
 =======
   m_Children: []
   m_Father: {fileID: 587328021}
@@ -1798,18 +1705,13 @@ RectTransform:
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542460090
->>>>>>> origin/Ben
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1391480431}
-=======
   m_GameObject: {fileID: 1542460088}
 >>>>>>> main
->>>>>>> origin/Ben
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -1844,16 +1746,11 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_TargetGraphic: {fileID: 1391480434}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1391480434
-<<<<<<< HEAD
-=======
 =======
   m_TargetGraphic: {fileID: 1542460091}
   m_OnClick:
@@ -1873,7 +1770,6 @@ MonoBehaviour:
         m_CallState: 2
 --- !u!114 &1542460091
 >>>>>>> main
->>>>>>> origin/Ben
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1882,12 +1778,8 @@ MonoBehaviour:
 <<<<<<< HEAD
   m_GameObject: {fileID: 1391480431}
 =======
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1391480431}
-=======
   m_GameObject: {fileID: 1542460088}
 >>>>>>> main
->>>>>>> origin/Ben
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -1914,21 +1806,14 @@ MonoBehaviour:
 <<<<<<< HEAD
 --- !u!222 &1391480435
 =======
-<<<<<<< HEAD
---- !u!222 &1391480435
-=======
 --- !u!222 &1542460092
 >>>>>>> main
->>>>>>> origin/Ben
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_GameObject: {fileID: 1391480431}
   m_CullTransparentMesh: 1
 --- !u!1 &1441514683
@@ -2301,12 +2186,9 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920083387}
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 1542460088}
 >>>>>>> main
->>>>>>> origin/Ben
   m_CullTransparentMesh: 1
 --- !u!1 &1974490914
 GameObject:
@@ -2461,11 +2343,7 @@ MonoBehaviour:
 <<<<<<< HEAD
   nameInputPanel: {fileID: 0}
 =======
-<<<<<<< HEAD
-  nameInputPanel: {fileID: 0}
-=======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!4 &2080214854
 Transform:
   m_ObjectHideFlags: 0
@@ -2481,8 +2359,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 <<<<<<< HEAD
 =======
 --- !u!1 &2125602408
@@ -2620,18 +2496,14 @@ CanvasRenderer:
   m_GameObject: {fileID: 2125602408}
   m_CullTransparentMesh: 1
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
-=======
   - {fileID: 1391016155}
 >>>>>>> main
->>>>>>> origin/Ben
   - {fileID: 368687684}
   - {fileID: 2080214854}
   - {fileID: 1974490917}
@@ -2641,10 +2513,6 @@ SceneRoots:
 <<<<<<< HEAD
   - {fileID: 1723679564}
 =======
-<<<<<<< HEAD
-  - {fileID: 1723679564}
-=======
   - {fileID: 407389411}
   - {fileID: 390157211}
 >>>>>>> main
->>>>>>> origin/Ben

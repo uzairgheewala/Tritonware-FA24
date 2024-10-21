@@ -123,9 +123,6 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
 --- !u!1 &200563317
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,11 +253,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.813}
-<<<<<<< HEAD
-=======
 =======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &262591991
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,9 +376,6 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
 --- !u!1 &279981493
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,11 +529,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 =======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &290123973
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,9 +652,6 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
 --- !u!1 &463637253
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,11 +661,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463637258}
+  - component: {fileID: 463637257}
   - component: {fileID: 463637256}
   - component: {fileID: 463637255}
   - component: {fileID: 463637254}
-  - component: {fileID: 463637259}
-  - component: {fileID: 463637260}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -749,7 +733,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &463637256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,27 +747,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRB: {fileID: 463637255}
-  PlayerSR: {fileID: 463637259}
-  animator: {fileID: 463637260}
+  PlayerSR: {fileID: 463637257}
   Speed: 50
   horizontal: 0
   vertical: 0
---- !u!4 &463637258
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463637253}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -226, y: -408, z: -3.1271}
-  m_LocalScale: {x: 25, y: 25.451204, z: 0.7945046}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &463637259
+--- !u!212 &463637257
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -824,40 +792,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1603081947, guid: c7ac145d87ce9de4a8eb155c874c32ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: 09666b4c5bf34454db4b5c6a9a920231, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.75, y: 3.38}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &463637260
-Animator:
-  serializedVersion: 5
+--- !u!4 &463637258
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463637253}
-<<<<<<< HEAD
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 622ec47b884ec4ac68e92251de85a383, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
-=======
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -226, y: -408, z: -3.1271}
@@ -868,7 +820,6 @@ Animator:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &611724392
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,11 +834,7 @@ GameObject:
 <<<<<<< HEAD
   - component: {fileID: 611724397}
 =======
-<<<<<<< HEAD
-  - component: {fileID: 611724397}
-=======
 >>>>>>> main
->>>>>>> origin/Ben
   m_Layer: 0
   m_Name: Doorway_Room1
   m_TagString: Untagged
@@ -913,14 +860,9 @@ MonoBehaviour:
 --- !u!224 &611724394
 RectTransform:
 =======
-<<<<<<< HEAD
---- !u!224 &611724394
-RectTransform:
-=======
 --- !u!4 &611724394
 Transform:
 >>>>>>> main
->>>>>>> origin/Ben
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -931,35 +873,23 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.3850577, y: 1.3850577, z: 1.3850577}
 =======
-<<<<<<< HEAD
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3850577, y: 1.3850577, z: 1.3850577}
-=======
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
 >>>>>>> main
->>>>>>> origin/Ben
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -359.5069, y: -380.27902}
   m_SizeDelta: {x: 98.4017, y: 102.8246}
   m_Pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-=======
 =======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!61 &611724395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -992,12 +922,8 @@ BoxCollider2D:
 <<<<<<< HEAD
   m_IsTrigger: 1
 =======
-<<<<<<< HEAD
-  m_IsTrigger: 1
-=======
   m_IsTrigger: 0
 >>>>>>> main
->>>>>>> origin/Ben
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1012,9 +938,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_Size: {x: 70, y: 70}
   m_EdgeRadius: 0
 --- !u!222 &611724397
@@ -1025,13 +948,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611724392}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 =======
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1 &651713852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,12 +1075,8 @@ Tilemap:
 <<<<<<< HEAD
 --- !u!1 &714269401
 =======
-<<<<<<< HEAD
---- !u!1 &714269401
-=======
 --- !u!1 &687507062
 >>>>>>> main
->>>>>>> origin/Ben
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1169,17 +1085,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   - component: {fileID: 714269404}
   - component: {fileID: 714269403}
   - component: {fileID: 714269402}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
-<<<<<<< HEAD
-=======
 =======
   - component: {fileID: 687507066}
   - component: {fileID: 687507065}
@@ -1189,7 +1100,6 @@ GameObject:
   m_Name: Main Camera
   m_TagString: MainCamera
 >>>>>>> main
->>>>>>> origin/Ben
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1198,22 +1108,14 @@ GameObject:
 --- !u!61 &714269402
 BoxCollider2D:
 =======
-<<<<<<< HEAD
---- !u!61 &714269402
-BoxCollider2D:
-=======
 --- !u!114 &687507063
 MonoBehaviour:
 >>>>>>> main
->>>>>>> origin/Ben
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_GameObject: {fileID: 714269401}
   m_Enabled: 1
   m_Density: 1
@@ -1306,8 +1208,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &714269404
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 687507062}
   m_Enabled: 1
@@ -1408,24 +1308,18 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!4 &687507066
 >>>>>>> main
->>>>>>> origin/Ben
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   m_GameObject: {fileID: 714269401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -308, y: -306, z: 4.5835}
   m_LocalScale: {x: 9.59373, y: 99.69262, z: 1.548}
   m_ConstrainProportionsScale: 0
-<<<<<<< HEAD
-=======
 =======
   m_GameObject: {fileID: 687507062}
   serializedVersion: 2
@@ -1434,7 +1328,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
 >>>>>>> main
->>>>>>> origin/Ben
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1479,12 +1372,8 @@ Transform:
 <<<<<<< HEAD
   m_LocalPosition: {x: -17, y: -394, z: 0}
 =======
-<<<<<<< HEAD
-  m_LocalPosition: {x: -17, y: -394, z: 0}
-=======
   m_LocalPosition: {x: 0, y: 0, z: 0}
 >>>>>>> main
->>>>>>> origin/Ben
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1615,9 +1504,6 @@ Tilemap:
     e32: 0
     e33: 1
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
 --- !u!1 &899684941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,19 +1978,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 =======
 >>>>>>> main
->>>>>>> origin/Ben
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/Ben
   - {fileID: 1682287340}
   - {fileID: 817953968}
   - {fileID: 279981498}
@@ -2115,11 +1995,8 @@ SceneRoots:
   - {fileID: 1835078207}
   - {fileID: 899684944}
   - {fileID: 200563320}
-<<<<<<< HEAD
-=======
 =======
   - {fileID: 687507066}
   - {fileID: 817953968}
   - {fileID: 611724394}
 >>>>>>> main
->>>>>>> origin/Ben
