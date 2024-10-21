@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoomName: Kitchen
-  targetEntrancePosition: {x: -370, y: -380, z: 0}
+  targetEntrancePosition: {x: -325, y: -350, z: 0}
 --- !u!224 &351472891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359.5069, y: -380.27902}
+  m_AnchoredPosition: {x: -362, y: -378}
   m_SizeDelta: {x: 98.4017, y: 102.8246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &482186257

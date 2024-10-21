@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
-using System.Collections; // Make sure to include this for IEnumerator
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager Instance { get; private set; } // Singleton instance
-
     public GameObject dialoguePanel; // Assign via Inspector
     public TextMeshProUGUI dialogueText; // Assign via Inspector
     public TextMeshProUGUI characterNameText; // Assign via Inspector
@@ -22,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<Sentence> sentences;
     private AudioSource audioSource; // AudioSource for playing sounds
     public AudioClip typingSound; // Assign via Inspector
+    public static DialogueManager Instance { get; private set; }
 
     void Awake()
     {
@@ -153,6 +152,7 @@ public class DialogueManager : MonoBehaviour
             {
                 button.gameObject.SetActive(false);
             }
+            Logger.Log("No choices to display.");
             return;
         }
 
