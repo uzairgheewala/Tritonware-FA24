@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float Speed;
     public float horizontal, vertical;
     private Vector2 previousPosition;
+    private float lastinputx;
+    private float lastinputy;
 
     public static PlayerMovement Instance { get; private set; }
 
@@ -56,11 +58,18 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         PlayerRB.velocity = new Vector2(horizontal * Speed, vertical * Speed);
-        animator.SetFloat("Speed", Mathf.Abs(horizontal * Speed));
-        if (horizontal * Speed > 0) {
-            PlayerSR.flipX = true;
-        } else if ((horizontal * Speed < 0)) {
-            PlayerSR.flipX = false;
+
+        animator.SetBool("isWalking", true);
+
+        if (Mathf.Abs(horizontal * Speed) > 0 || Mathf.Abs(vertical * Speed) > 0) {
+            animator.SetFloat("InputX", horizontal * Speed);
+            animator.SetFloat("InputY", vertical * Speed);
+            lastinputx = horizontal * Speed;
+            lastinputy = vertical * Speed;
+        } else {
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("LastInputX", lastinputx);
+            animator.SetFloat("LastInputY", lastinputy);
         }
     }
 
