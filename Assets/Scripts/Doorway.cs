@@ -31,8 +31,8 @@ public class Doorway : MonoBehaviour
     {
         if (other.CompareTag("Player") && !string.IsNullOrEmpty(targetRoomName))
         {
-            Logger.Log($"Player triggered doorway to {targetRoomName}");
-            SceneManager.LoadScene(targetRoomName);
+            Logger.Log($"Player triggered doorway to {targetRoomName}, going to {targetEntrancePosition}");
+            CustomSceneManager.Instance.TransitionToRoom(targetRoomName, targetEntrancePosition);
         }
     }
 }

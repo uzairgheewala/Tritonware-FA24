@@ -56,6 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Tritonware-FA24.sln",
-    "dotnet.preferCSharpExtension": true
+    "dotnet.defaultSolution": "Tritonware-FA24.sln"
 }

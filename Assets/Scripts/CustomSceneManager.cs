@@ -6,7 +6,6 @@ using System;
 public class CustomSceneManager : MonoBehaviour
 {
     public RoomData[] rooms; // Assign in Inspector
-    public TilemapManager tilemapManager; // Assign in Inspector
     public Transform player; // Assign in Inspector
 
     public RoomConnection[] roomConnections; // Define how rooms are connected
@@ -32,17 +31,13 @@ public class CustomSceneManager : MonoBehaviour
 
     void Start()
     {
-        foreach (RoomData room in rooms)
-        {
-            tilemapManager.InitializeRoom(room.startPosition, room.width, room.height);
-            // Optionally, place objects or NPCs here
-        }
-
         if (rooms.Length > 0)
         {
             currentRoom = rooms[0].roomName;
             Logger.Log($"Starting in room: {currentRoom}");
         }
+
+        PersistentCamera.Instance.SetTarget(player);
     }
 
     void Update()
@@ -52,10 +47,13 @@ public class CustomSceneManager : MonoBehaviour
         {
             if (currentRoom == connection.fromRoomName)
             {
-                Vector3Int playerTile = tilemapManager.floorTilemap.WorldToCell(player.position);
-                if (playerTile == connection.doorwayPosition)
+                Vector3 playerPos = player.position;
+                Vector3 doorwayPos = connection.doorwayPosition; // Use world position for simplicity
+
+                // Simple proximity check
+                if (Vector3.Distance(playerPos, doorwayPos) < 0.5f)
                 {
-                    TransitionToRoom(connection.toRoomName, connection.doorwayPosition);
+                    TransitionToRoom(connection.toRoomName, connection.targetEntrancePosition);
                 }
             }
         }
@@ -63,12 +61,37 @@ public class CustomSceneManager : MonoBehaviour
 
     public void TransitionToRoom(string targetRoomName, Vector3Int entrancePosition)
     {
-        Logger.Log($"Transitioning from {currentRoom} to {targetRoomName}");
+        Logger.Log($"Transitioning from current room: {currentRoom}, to {targetRoomName}");
 
         // Start the transition process
         StartCoroutine(LoadAndSwitchRoom(targetRoomName, entrancePosition));
     }
 
+    private IEnumerator LoadAndSwitchRoom(string targetRoomName, Vector3 entrancePosition)
+    {
+        // Load the target room
+        Logger.Log($"Loading room: {targetRoomName}");
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(targetRoomName, LoadSceneMode.Single);
+
+        // Wait until the room is loaded
+        while (!loadOperation.isDone)
+        {
+            yield return null;
+        }
+
+        Logger.Log($"Room {targetRoomName} loaded successfully.");
+
+        // Update current room
+        currentRoom = targetRoomName;
+
+        // Move player to the entrance position in the new room
+        player.position = entrancePosition;
+        Logger.Log($"Player moved to {entrancePosition}");
+
+        yield return null;
+    }
+
+    /*
     private IEnumerator LoadAndSwitchRoom(string targetRoomName, Vector3Int entrancePosition)
     {
         // Load the target room additively
@@ -107,7 +130,7 @@ public class CustomSceneManager : MonoBehaviour
         Logger.Log($"Player moved to {newPlayerPosition}");
 
         yield return null;
-    }
+    }*/
 }
 
 [System.Serializable]

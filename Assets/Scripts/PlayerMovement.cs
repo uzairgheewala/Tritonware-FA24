@@ -11,6 +11,23 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal, vertical;
     private Vector2 previousPosition;
 
+    public static PlayerMovement Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            Logger.LogWarning("Duplicate PlayerMovement instance destroyed.");
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            Logger.Log("PlayerMovement instance created.");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
