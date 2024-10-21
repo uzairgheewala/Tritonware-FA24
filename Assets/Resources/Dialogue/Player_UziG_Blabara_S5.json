@@ -1,6 +1,10 @@
 {
     "characters": [
         {
+            "characterName": "Player",
+            "sentences": []
+        },
+        {
             "characterName": "UziG",
             "sentences": [
                 {
