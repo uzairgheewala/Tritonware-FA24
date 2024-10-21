@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         // After physics updates, check if position has changed
         if (PlayerRB.position != previousPosition)
         {
-            //Logger.Log($"Player moved to position: {PlayerRB.position}");
+            Logger.Log($"Player moved to position: {PlayerRB.position}");
             previousPosition = PlayerRB.position;
         }
     }

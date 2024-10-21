@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E)) // Changed to E
         {
             dialogueLoader?.LoadDialogue(); // Safely call LoadDialogue
-            dialogueLoader?.StartDialogue(); // Safely call StartDialogue
+            //dialogueLoader?.Start(); // Safely call StartDialogue
         }
     }
 
