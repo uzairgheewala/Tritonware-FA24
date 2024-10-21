@@ -1,11 +1,6 @@
 import tkinter as tk
-<<<<<<< HEAD
-from tkinter import ttk, messagebox
-import json
-=======
 from tkinter import ttk, messagebox, filedialog, simpledialog
 import json, os
->>>>>>> main
 from tkinter.scrolledtext import ScrolledText
 
 class DialogueEntry:
@@ -30,7 +25,6 @@ class DialogueEntry:
         self.selected_sentence_index = None
         self.selected_choice = None
         self.selected_choice_index = None
->>>>>>> main
 
         self.create_widgets()
         self.update_json_display()
@@ -70,30 +64,6 @@ class DialogueEntry:
         add_sentence_btn = ttk.Button(sentence_frame, text="Add Sentence", command=self.add_sentence)
         add_sentence_btn.grid(row=0, column=2, padx=5)
         
-<<<<<<< HEAD
-        # Frame for Choices
-        choice_frame = ttk.LabelFrame(self.root, text="Add Choice", padding="10")
-        choice_frame.grid(row=2, column=0, padx=10, pady=5, sticky="EW")
-        
-        ttk.Label(choice_frame, text="Choice Text:").grid(row=0, column=0, sticky="W")
-        self.choice_entry = ttk.Entry(choice_frame, width=50)
-        self.choice_entry.grid(row=0, column=1, padx=5, pady=2)
-        
-        ttk.Label(choice_frame, text="Next Dialogue Character:").grid(row=1, column=0, sticky="W")
-        self.next_char_entry = ttk.Entry(choice_frame, width=30)
-        self.next_char_entry.grid(row=1, column=1, padx=5, pady=2)
-        
-        ttk.Label(choice_frame, text="Next Sentence Text:").grid(row=2, column=0, sticky="W")
-        self.next_sentence_entry = ttk.Entry(choice_frame, width=50)
-        self.next_sentence_entry.grid(row=2, column=1, padx=5, pady=2)
-        
-        add_choice_btn = ttk.Button(choice_frame, text="Add Choice", command=self.add_choice)
-        add_choice_btn.grid(row=3, column=1, pady=5, sticky="E")
-        
-        # JSON Display
-        json_frame = ttk.LabelFrame(self.root, text="JSON Output", padding="10")
-        json_frame.grid(row=3, column=0, padx=10, pady=5, sticky="NSEW")
-=======
         # Listbox to display sentences
         self.sentence_listbox = tk.Listbox(sentence_frame, height=5, exportselection=False)
         self.sentence_listbox.grid(row=1, column=0, columnspan=3, sticky="EW", pady=5)
@@ -178,9 +148,6 @@ class DialogueEntry:
         else:
             messagebox.showwarning("Input Error", "Character name cannot be empty.")
 
-<<<<<<< HEAD
-    def add_sentence(self):
-=======
     def add_character(self):
         char_name = self.new_char_entry.get().strip()
         if not char_name:
@@ -314,7 +281,6 @@ class DialogueEntry:
         if not self.selected_character:
             messagebox.showwarning("No Character Selected", "Please select a character to add sentences.")
             return
->>>>>>> main
         text = self.sentence_entry.get().strip()
         if not text:
             messagebox.showwarning("Input Error", "Sentence text cannot be empty.")
@@ -323,21 +289,6 @@ class DialogueEntry:
             "text": text,
             "choices": []
         }
-<<<<<<< HEAD
-        self.dialogue["sentences"].append(sentence)
-        self.current_sentence = sentence  # Set as current sentence for adding choices
-        self.sentence_entry.delete(0, tk.END)
-        self.update_json_display()
-        messagebox.showinfo("Success", "Sentence added. Now you can add choices for this sentence.")
-
-    def add_choice(self):
-        if not self.current_sentence:
-            messagebox.showwarning("No Sentence", "Please add a sentence before adding choices.")
-            return
-        choice_text = self.choice_entry.get().strip()
-        next_char = self.next_char_entry.get().strip()
-        next_sentence = self.next_sentence_entry.get().strip()
-=======
         self.selected_character["sentences"].append(sentence)
         self.sentence_listbox.insert(tk.END, text)
         self.sentence_entry.delete(0, tk.END)
@@ -443,7 +394,6 @@ class DialogueEntry:
         choice_text = self.choice_text_entry.get().strip()
         next_char = self.choice_next_char_entry.get().strip() or "Player"  # Default to Player
         next_sentence = self.choice_next_sentence_entry.get().strip()
->>>>>>> main
         
         if not choice_text or not next_sentence:
             messagebox.showwarning("Input Error", "Choice text and next sentence must be filled.")
@@ -478,7 +428,6 @@ class DialogueEntry:
             }
         }
         
-<<<<<<< HEAD
         self.current_sentence["choices"].append(choice)
         
         # Clear choice entries
@@ -488,6 +437,7 @@ class DialogueEntry:
         self.update_json_display()
         messagebox.showinfo("Success", "Choice added.")
 
+    """
     def update_json_display(self):
         self.json_display.configure(state='normal')
 
@@ -498,7 +448,7 @@ class DialogueEntry:
         self.json_display.delete(1.0, tk.END)
         self.json_display.insert(tk.END, pretty_json)
         self.json_display.configure(state='disabled')
-=======
+
         if self.selected_choice:
             # Edit existing choice
             self.selected_choice["choiceText"] = choice_text
@@ -522,6 +472,7 @@ class DialogueEntry:
         self.choice_next_char_entry.delete(0, tk.END)
         self.choice_next_sentence_entry.delete(0, tk.END)
         self.update_json_display()
+    """
 
     def edit_choice(self):
         if not self.selected_choice:
