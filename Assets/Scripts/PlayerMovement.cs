@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 previousPosition;
     private float lastinputx;
     private float lastinputy;
+    public GameObject footstep;
 
     public static PlayerMovement Instance { get; private set; }
 
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerRB.velocity = new Vector2(horizontal * Speed, vertical * Speed);
 
         animator.SetBool("isWalking", true);
+        footstep.SetActive(true);
 
         if (Mathf.Abs(horizontal * Speed) > 0 || Mathf.Abs(vertical * Speed) > 0) {
             animator.SetFloat("InputX", horizontal * Speed);
@@ -70,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isWalking", false);
             animator.SetFloat("LastInputX", lastinputx);
             animator.SetFloat("LastInputY", lastinputy);
+            footstep.SetActive(false);
         }
     }
 
