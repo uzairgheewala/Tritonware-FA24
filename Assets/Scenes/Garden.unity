@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoomName: Living Room
-  targetEntrancePosition: {x: -410, y: -130, z: 0}
+  targetEntrancePosition: {x: -450, y: -210, z: 0}
 --- !u!224 &1121640936
 RectTransform:
   m_ObjectHideFlags: 0
