@@ -110,6 +110,6 @@ public class GameManager : MonoBehaviour
         {
             flagStatus += flag.Key + ": " + flag.Value + "\n";
         }
-        GUI.Label(new Rect(10, 10, 300, 500), flagStatus);
+        //GUI.Label(new Rect(10, 10, 300, 500), flagStatus);
     }
 }
