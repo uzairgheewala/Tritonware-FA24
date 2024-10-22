@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Background
+  - ConfinerShape
   layers:
   - Default
   - TransparentFX
