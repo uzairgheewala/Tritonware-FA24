@@ -81,32 +81,12 @@ public class CustomSceneManager : MonoBehaviour
 
         Logger.Log($"Room {targetRoomName} loaded successfully.");
 
-        // Update current room
-        currentRoom = targetRoomName;
+        // Set the newly loaded scene as the active scene
+        Scene loadedScene = SceneManager.GetSceneByName(targetRoomName);
+        SceneManager.SetActiveScene(loadedScene);
+        Logger.Log($"Active scene set to {loadedScene.name}");
 
-        // Move player to the entrance position in the new room
-        player.position = entrancePosition;
-        Logger.Log($"Player moved to {entrancePosition}");
-
-        yield return null;
-    }
-
-    /*
-    private IEnumerator LoadAndSwitchRoom(string targetRoomName, Vector3Int entrancePosition)
-    {
-        // Load the target room additively
-        Logger.Log($"Loading room: {targetRoomName}");
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(targetRoomName, LoadSceneMode.Additive);
-
-        // Wait until the room is loaded
-        while (!loadOperation.isDone)
-        {
-            yield return null;
-        }
-
-        Logger.Log($"Room {targetRoomName} loaded successfully.");
-
-        // Optionally, unload the current room
+        // Optionally, unload the previous room
         if (!string.IsNullOrEmpty(currentRoom))
         {
             Logger.Log($"Unloading room: {currentRoom}");
@@ -125,12 +105,37 @@ public class CustomSceneManager : MonoBehaviour
         currentRoom = targetRoomName;
 
         // Move player to the entrance position in the new room
-        Vector3 newPlayerPosition = tilemapManager.floorTilemap.CellToWorld(entrancePosition) + new Vector3(0.5f, 0.5f, 0);
-        player.position = newPlayerPosition;
-        Logger.Log($"Player moved to {newPlayerPosition}");
+        player.position = entrancePosition;
+        Logger.Log($"Player moved to {entrancePosition}");
 
         yield return null;
-    }*/
+    }
+
+    void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Logger.Log($"Scene loaded: {scene.name}");
+
+        // Set the loaded scene as the active scene
+        bool setActive = SceneManager.SetActiveScene(scene);
+        if (setActive)
+        {
+            Logger.Log($"Active scene set to: {scene.name}");
+        }
+        else
+        {
+            Logger.LogError($"Failed to set active scene to: {scene.name}");
+        }
+    }
 }
 
 [System.Serializable]

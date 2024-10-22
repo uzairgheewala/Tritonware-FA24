@@ -9,7 +9,10 @@ public class CharacterManager : MonoBehaviour
     public static CharacterManager Instance { get; private set; }
 
     public List<CharacterBase> allCharacters;
+    public GameObject npcPrefab; // Assign the NPC prefab here
+    public Transform livingRoomSpawnPoint; // Assign a spawn point in LivingRoom scene
     private Dictionary<string, CharacterInstance> activeCharacters;
+    private Dictionary<string, GameObject> characterGameObjects;
 
     private void Awake()
     {
@@ -42,12 +45,60 @@ public class CharacterManager : MonoBehaviour
     void InitializeCharacters()
     {
         activeCharacters = new Dictionary<string, CharacterInstance>();
+        characterGameObjects = new Dictionary<string, GameObject>();
+
         foreach (var character in allCharacters)
         {
             CharacterInstance instance = new CharacterInstance(character);
             activeCharacters.Add(character.characterName, instance);
             Logger.Log($"Character {character.characterName} initialized.");
+
+            // Instantiate NPC in the LivingRoom scene
+            SpawnCharacterInScene(character, "Living Room");
         }
+    }
+
+    void SpawnCharacterInScene(CharacterBase character, string sceneName)
+    {
+        // Check if the current active scene is the target scene
+        Logger.Log(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != sceneName)
+        {
+            Logger.Log($"Current scene is not {sceneName}. Skipping spawn for {character.characterName}.");
+            return;
+        }
+
+        // Instantiate NPC prefab
+        GameObject npcGO = Instantiate(npcPrefab, livingRoomSpawnPoint.position, Quaternion.identity);
+        npcGO.name = character.characterName;
+
+        // Initialize CharacterDisplay
+        CharacterDisplay display = npcGO.GetComponent<CharacterDisplay>();
+        if (display != null)
+        {
+            display.Initialize(activeCharacters[character.characterName]);
+        }
+        else
+        {
+            Logger.LogError($"CharacterDisplay component missing on NPC prefab for {character.characterName}.");
+        }
+
+        // Initialize CharacterAI
+        CharacterAI ai = npcGO.GetComponent<CharacterAI>();
+        if (ai != null)
+        {
+            ai.characterInstance = activeCharacters[character.characterName];
+            Logger.Log($"CharacterAI initialized for {character.characterName}.");
+        }
+        else
+        {
+            Logger.LogError($"CharacterAI component missing on NPC prefab for {character.characterName}.");
+        }
+
+        // Add to game objects dictionary
+        characterGameObjects.Add(character.characterName, npcGO);
+
+        Logger.Log($"NPC {character.characterName} spawned in {sceneName} at position {livingRoomSpawnPoint.position}.");
     }
 
     public CharacterInstance GetCharacter(string name)
@@ -77,6 +128,8 @@ public class CharacterManager : MonoBehaviour
     {
         return new List<CharacterInstance>(activeCharacters.Values);
     }
+
+    
 }
 
 public class CharacterInstance
@@ -95,15 +148,6 @@ public class CharacterInstance
         currentInventory = new List<ItemBase>(baseCharacter.inventory);
         currentRelationships = new Dictionary<string, Relationship>();
         OnRelationshipChanged = new UnityEvent<string, float>();
-
-        foreach (var rel in baseCharacter.relationships)
-        {
-            currentRelationships.Add(rel.characterName, new Relationship
-            {
-                characterName = rel.characterName,
-                relationshipValue = rel.relationshipValue
-            });
-        }
 
         Logger.Log($"CharacterInstance created for {baseData.characterName}");
     }

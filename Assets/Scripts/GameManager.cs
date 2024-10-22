@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameState currentGameState;
     DialogueManager dialogueManager;
     CharacterManager characterManager;
+    CustomSceneManager customSceneManager;
 
     public GameObject nameInputPanel; // Assign the name input panel in the Inspector
 
@@ -62,13 +63,14 @@ public class GameManager : MonoBehaviour
 
     void InitializeManagers()
     {
+        if (customSceneManager == null)
+            customSceneManager = FindObjectOfType<CustomSceneManager>();
+            
         if (dialogueManager == null)
             dialogueManager = FindObjectOfType<DialogueManager>();
 
         if (characterManager == null)
             characterManager = FindObjectOfType<CharacterManager>();
-
-        // Initialize other managers similarly
     }
 
     private void ShowNameInput()

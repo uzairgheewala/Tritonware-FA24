@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharacterAI : MonoBehaviour
 {
@@ -16,9 +17,11 @@ public class CharacterAI : MonoBehaviour
     public CharacterInstance characterInstance;
     public float moveSpeed = 2f;
     private Vector2 targetPosition;
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         StartCoroutine(StateMachine());
     }
 
@@ -53,19 +56,18 @@ public class CharacterAI : MonoBehaviour
             targetPosition = GetRandomPosition();
         }
         MoveTowards(targetPosition);
+        SetWalking(true);
     }
 
     void InvestigateBehavior()
     {
-        MoveTowards(targetPosition);
-        // Check if arrived at the clue location
+        // Similar to IdleBehavior or customized
         if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
         {
-            // Process the clue
-            //FindObjectOfType<InvestigationManager>().ProcessClue(characterInstance.currentClue);
-            // Return to Idle
-            currentState = State.Idle;
+            targetPosition = GetRandomPosition();
         }
+        MoveTowards(targetPosition);
+        SetWalking(true);
     }
 
     void SuspectBehavior()
@@ -75,16 +77,20 @@ public class CharacterAI : MonoBehaviour
         {
             targetPosition = suspectedCharacter.position;
             MoveTowards(targetPosition);
+            SetWalking(true);
+
             // Check proximity to execute action
             if (Vector2.Distance(transform.position, targetPosition) < 1f)
             {
                 ExecuteAction(suspectedCharacter);
                 currentState = State.Idle;
+                SetWalking(false);
             }
         }
         else
         {
             currentState = State.Idle;
+            SetWalking(false);
         }
     }
 
@@ -92,6 +98,7 @@ public class CharacterAI : MonoBehaviour
     {
         // Execute actions such as confronting or attacking
         // Implement based on game requirements
+        SetWalking(false);
     }
 
     Vector2 GetRandomPosition()
@@ -105,6 +112,25 @@ public class CharacterAI : MonoBehaviour
     {
         Vector2 direction = (position - (Vector2)transform.position).normalized;
         transform.Translate(direction * moveSpeed * Time.deltaTime);
+        UpdateAnimator(direction);
+    }
+
+    void UpdateAnimator(Vector2 direction)
+    {
+        if (animator != null)
+        {
+            animator.SetFloat("InputX", direction.x);
+            animator.SetFloat("InputY", direction.y);
+            animator.SetBool("isWalking", true);
+        }
+    }
+
+    void SetWalking(bool isWalking)
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", isWalking);
+        }
     }
 
     CharacterInstance FindSuspectedCharacter()
@@ -132,6 +158,6 @@ public class CharacterAI : MonoBehaviour
 
     void ExecuteAction(CharacterInstance suspect)
     {
-        FindObjectOfType<InvestigationManager>().KillCharacter(suspect.baseData.characterName);
+        Logger.Log($"{characterInstance.baseData.characterName} is executing action on {suspect.baseData.characterName}");
     }
 }
