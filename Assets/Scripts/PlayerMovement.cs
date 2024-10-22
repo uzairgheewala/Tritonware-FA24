@@ -6,9 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D PlayerRB;
     public SpriteRenderer PlayerSR;
+    public Animator animator;
     public float Speed;
     public float horizontal, vertical;
     private Vector2 previousPosition;
+    private float lastinputx;
+    private float lastinputy;
 
     public static PlayerMovement Instance { get; private set; }
 
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         // After physics updates, check if position has changed
         if (PlayerRB.position != previousPosition)
         {
-            //Logger.Log($"Player moved to position: {PlayerRB.position}");
+            Logger.Log($"Player moved to position: {PlayerRB.position}");
             previousPosition = PlayerRB.position;
         }
     }
@@ -55,6 +58,19 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         PlayerRB.velocity = new Vector2(horizontal * Speed, vertical * Speed);
+
+        animator.SetBool("isWalking", true);
+
+        if (Mathf.Abs(horizontal * Speed) > 0 || Mathf.Abs(vertical * Speed) > 0) {
+            animator.SetFloat("InputX", horizontal * Speed);
+            animator.SetFloat("InputY", vertical * Speed);
+            lastinputx = horizontal * Speed;
+            lastinputy = vertical * Speed;
+        } else {
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("LastInputX", lastinputx);
+            animator.SetFloat("LastInputY", lastinputy);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

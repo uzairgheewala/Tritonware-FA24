@@ -27,7 +27,8 @@ public class CameraAdjuster : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //AdjustCameraToBackground();
+        Debug.Log($"Scene loaded: {scene.name}");
+        AdjustCameraToBackground();
     }
 
     void AdjustCameraToBackground()
@@ -38,6 +39,7 @@ public class CameraAdjuster : MonoBehaviour
         if (bgObject == null)
         {
             Debug.LogWarning("No GameObject with tag 'Background' found in the scene to adjust the camera.");
+            mainCamera.orthographicSize = 5f; // Default size
             return;
         }
 
@@ -46,6 +48,7 @@ public class CameraAdjuster : MonoBehaviour
         if (bgRenderer == null)
         {
             Debug.LogWarning("Background GameObject found, but it does not have a SpriteRenderer component.");
+            mainCamera.orthographicSize = 5f; // Default size
             return;
         }
 
@@ -54,20 +57,30 @@ public class CameraAdjuster : MonoBehaviour
         if (bgSprite == null)
         {
             Debug.LogWarning("Background SpriteRenderer found, but no sprite is assigned.");
+            mainCamera.orthographicSize = 5f; // Default size
             return;
         }
 
-        // Calculate the height in world units
+        // Calculate the height and width in world units
         float spriteHeight = bgSprite.bounds.size.y;
+        float spriteWidth = bgSprite.bounds.size.x;
+        Debug.Log($"Background Sprite Size - Width: {spriteWidth}, Height: {spriteHeight}");
 
-        // Set the orthographic size to half the sprite's height
-        mainCamera.orthographicSize = spriteHeight / 2f;
+        // Calculate required orthographic size based on height and aspect ratio
+        float screenAspect = (float)Screen.width / (float)Screen.height;
+        float targetOrthographicSize = spriteHeight / 2f;
+
+        // Adjust orthographic size to ensure the entire background fits
+        float targetOrthographicSizeWidth = (spriteWidth / screenAspect) / 2f;
+        targetOrthographicSize = Mathf.Max(targetOrthographicSize, targetOrthographicSizeWidth);
+
+        mainCamera.orthographicSize = targetOrthographicSize;
+        Debug.Log($"Camera orthographic size set to: {mainCamera.orthographicSize}");
 
         // Optionally, adjust camera position to center on the background
         Vector3 bgPosition = bgRenderer.transform.position;
         Vector3 cameraPosition = new Vector3(bgPosition.x, bgPosition.y, mainCamera.transform.position.z);
-        mainCamera.transform.position = cameraPosition;
-
-        Debug.Log($"Camera adjusted to background size: {spriteHeight} units height.");
+        transform.position = cameraPosition;
+        Debug.Log($"Camera position set to: {cameraPosition}");
     }
 }

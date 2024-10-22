@@ -1,0 +1,55 @@
+{
+    "characters": [
+        {
+            "characterName": "Player",
+            "sentences": []
+        },
+        {
+            "characterName": "UziG",
+            "sentences": [
+                {
+                    "text": "ffvfvff",
+                    "choices": [
+                        {
+                            "choiceText": "dsffvfvdfdv",
+                            "nextDialogue": {
+                                "characterName": "Johnson",
+                                "sentences": [
+                                    {
+                                        "text": "csscdcdscds",
+                                        "choices": []
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "text": "c z cv",
+                    "choices": [
+                        {
+                            "choiceText": "vfdvd",
+                            "nextDialogue": {
+                                "characterName": "Blabara",
+                                "sentences": [
+                                    {
+                                        "text": "vdfdvf",
+                                        "choices": []
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "characterName": "Blabara",
+            "sentences": []
+        },
+        {
+            "characterName": "Johnson",
+            "sentences": []
+        }
+    ]
+}

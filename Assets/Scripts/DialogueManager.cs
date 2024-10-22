@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using TMPro;
-using System.Collections; // Make sure to include this for IEnumerator
 
 public class DialogueManager : MonoBehaviour
 {

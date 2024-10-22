@@ -1,0 +1,34 @@
+{
+    "characters": [
+        {
+            "characterName": "Player",
+            "sentences": []
+        },
+        {
+            "characterName": "UziG",
+            "sentences": [
+                {
+                    "text": "ffvfvff",
+                    "choices": [
+                        {
+                            "choiceText": "dsffvfvdfdv",
+                            "nextDialogue": {
+                                "characterName": "Blabara",
+                                "sentences": [
+                                    {
+                                        "text": "csscdcdscds",
+                                        "choices": []
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "characterName": "Blabara",
+            "sentences": []
+        }
+    ]
+}

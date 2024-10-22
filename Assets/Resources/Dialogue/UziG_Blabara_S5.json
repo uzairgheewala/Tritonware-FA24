@@ -5,7 +5,20 @@
             "sentences": [
                 {
                     "text": "ffvfvff",
-                    "choices": []
+                    "choices": [
+                        {
+                            "choiceText": "dsffvfvdfdv",
+                            "nextDialogue": {
+                                "characterName": "Blabara",
+                                "sentences": [
+                                    {
+                                        "text": "csscdcdscds",
+                                        "choices": []
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },

@@ -238,7 +238,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &368687682
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,9 +292,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 >>>>>>> main
 =======
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &406798535
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +666,10 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &1183496668
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,9 +821,12 @@ RectTransform:
   m_AnchoredPosition: {x: 2.7530546, y: 1.4620134}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 >>>>>>> main
 =======
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &1209973732
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +930,7 @@ MonoBehaviour:
   PlayerSR: {fileID: 1209973734}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Speed: 4
 =======
   Speed: 5
@@ -925,6 +938,9 @@ MonoBehaviour:
 =======
   Speed: 4
 >>>>>>> Uzair
+=======
+  Speed: 5
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
   horizontal: 0
   vertical: 0
 --- !u!50 &1209973737
@@ -1003,12 +1019,15 @@ GameObject:
   - component: {fileID: 1391016156}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 1391016157}
 =======
 >>>>>>> main
 =======
   - component: {fileID: 1391016157}
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1136,8 +1155,11 @@ MonoBehaviour:
     m_ContrastAdaptiveSharpening: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1391016157
 =======
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &1974490914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,15 +1179,19 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1974490915
+<<<<<<< HEAD
 >>>>>>> main
 =======
 --- !u!114 &1391016157
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1181,6 +1207,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
   m_GameObject: {fileID: 1974490914}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1225,9 +1253,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 >>>>>>> main
 =======
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &1998573197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1391,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1 &2080214852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,9 +1439,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 >>>>>>> main
 =======
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1421,11 +1458,17 @@ SceneRoots:
   - {fileID: 45523534}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
   - {fileID: 368687684}
   - {fileID: 2080214854}
   - {fileID: 1974490917}
   - {fileID: 1183496672}
+<<<<<<< HEAD
 >>>>>>> main
 =======
 >>>>>>> Uzair
+=======
+>>>>>>> be7fa63678eaa3c0e2c527550acd5f214006e7f3
