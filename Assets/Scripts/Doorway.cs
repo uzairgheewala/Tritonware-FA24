@@ -5,7 +5,6 @@ public class Doorway : MonoBehaviour
 {
     public string targetRoomName; // Name of the room to load
     public Vector3Int targetEntrancePosition; // Player's position in the target room
-
     private CustomSceneManager sceneManager;
 
     void Start()
