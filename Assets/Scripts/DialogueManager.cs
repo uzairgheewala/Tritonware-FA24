@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get; private set; } // Singleton instance
+
     public GameObject dialoguePanel; // Assign via Inspector
     public TextMeshProUGUI dialogueText; // Assign via Inspector
     public TextMeshProUGUI characterNameText; // Assign via Inspector
@@ -20,7 +22,6 @@ public class DialogueManager : MonoBehaviour
     private Queue<Sentence> sentences;
     private AudioSource audioSource; // AudioSource for playing sounds
     public AudioClip typingSound; // Assign via Inspector
-    public static DialogueManager Instance { get; private set; }
 
     void Awake()
     {
