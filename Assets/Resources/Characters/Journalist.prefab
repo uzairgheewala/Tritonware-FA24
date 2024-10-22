@@ -98,8 +98,9 @@ MonoBehaviour:
   dialogue:
     characterName: 
     sentences: []
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 8b190988c5497eb428be40aa2431c0d4, type: 3}
   typingSound: {fileID: 8300000, guid: fcd79df920cf60d40bd40b0c83f476d0, type: 3}
+  playerName: 
 --- !u!1 &8618577022026670808
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d840dcda2fee4ce4cb91bff4aeda2fff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -54,11 +55,29 @@ public class GameManager : MonoBehaviour
         }
 
         InitializeManagers();
+
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the sceneUnloaded event to prevent memory leaks
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    private void OnSceneUnloaded(Scene unloadedScene)
+    {
+        if (unloadedScene.name.Equals("Title"))
+        {
+            Debug.Log("Title scene unloaded. Unpausing the game.");
+            ChangeState(GameState.Playing);
+        }
     }
 
     void Start()
     {
         ShowNameInput(); // Show the name input panel when the game starts
+        //ChangeState(GameState.Paused);
     }
 
     void InitializeManagers()

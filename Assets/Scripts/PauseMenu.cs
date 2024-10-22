@@ -73,6 +73,26 @@ public class PauseMenu : MonoBehaviour
     {
         // Load the Title Scene when clicking the Quit button
         Time.timeScale = 1f; // Ensure the game is unpaused
-        SceneManager.LoadScene("TitleScene");
+        var managers = new MonoBehaviour[]
+        {
+            PersistentCamera.Instance,
+            CinemachineCameraManager.Instance,
+            CustomSceneManager.Instance,
+            DialogueManager.Instance,
+            MusicManager.Instance,
+            GameManager.Instance,
+            PlayerMovement.Instance
+        };
+
+        foreach (var manager in managers)
+        {
+            if (manager != null)
+            {
+                Destroy(manager.gameObject);
+                Debug.Log($"{manager.GetType().Name} has been destroyed.");
+            }
+        }
+        SceneManager.LoadScene("Title", LoadSceneMode.Single);
+
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -60,9 +61,16 @@ public class CharacterManager : MonoBehaviour
 
     void SpawnCharacterInScene(CharacterBase character, string sceneName)
     {
+        // Ensure the spawn point is assigned
+        if (livingRoomSpawnPoint == null)
+        {
+            Logger.LogError("livingRoomSpawnPoint is not assigned in CharacterManager.");
+            return;
+        }
+
         // Check if the current active scene is the target scene
-        Logger.Log(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != sceneName)
+        Logger.Log($"Current active scene: {SceneManager.GetActiveScene().name}");
+        if (SceneManager.GetActiveScene().name != sceneName)
         {
             Logger.Log($"Current scene is not {sceneName}. Skipping spawn for {character.characterName}.");
             return;

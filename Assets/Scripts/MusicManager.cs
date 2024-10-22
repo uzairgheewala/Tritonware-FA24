@@ -4,14 +4,14 @@ using System.Collections;
 public class MusicManager : MonoBehaviour
 {
 
-    private static MusicManager instance;
+    public static MusicManager Instance { get; private set; }
     void Awake()
     {
-        if (instance != null && instance != this) {
+        if (Instance != null && Instance != this) {
             Destroy(this.gameObject);
             return;
         } else {
-            instance = this;
+            Instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
     }
