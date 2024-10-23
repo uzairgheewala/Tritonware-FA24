@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ab03e371963af45b8343fb194db762, type: 3}
   m_Name: Pathologist
   m_EditorClassIdentifier: 
-  characterName: Pathologist
+  characterName: Player
   age: 0
-  role: 
+  role: Forensic Pathologist
   characterSprite: {fileID: 0}
   idleSprites: []
   walkingSprites: []

@@ -17,7 +17,7 @@ public class CharacterAI : MonoBehaviour
     public CharacterInstance characterInstance;
     public float moveSpeed = 2f;
     private Vector2 targetPosition;
-    private Animator animator;
+    public Animator animator;
 
     void Start()
     {

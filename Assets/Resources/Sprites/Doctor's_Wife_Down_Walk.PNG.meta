@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: DW_D_Idle
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 20
+        width: 425
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 18, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a1fcb53c7748242b92bf693be29bf9
+      internalID: 1237231625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DW_D_RightStride
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 11
+        width: 443
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31858062e59785b428d87233e207b7da
+      internalID: 1867256197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DW_D_Idle2
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 20
+        width: 443
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d95f1e008e526439ec673e2a24915e
+      internalID: 1449153584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DW_D_LeftStride
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 20
+        width: 416
+        height: 633
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bb37701cef6f1439d37211b3b78c59
+      internalID: 477474045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DW_D_Idle: 1237231625
+      DW_D_Idle2: 1449153584
+      DW_D_LeftStride: 477474045
+      DW_D_RightStride: 1867256197
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Up_Walk_0
+      name: P_U_Idle
       rect:
         serializedVersion: 2
         x: 124
@@ -118,7 +118,7 @@ TextureImporter:
         width: 470
         height: 636
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Up_Walk_1
+      name: P_U_RightStride
       rect:
         serializedVersion: 2
         x: 816
@@ -139,7 +139,7 @@ TextureImporter:
         width: 468
         height: 638
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Up_Walk_2
+      name: P_U_Idle2
       rect:
         serializedVersion: 2
         x: 1518
@@ -160,7 +160,7 @@ TextureImporter:
         width: 469
         height: 636
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Up_Walk_3
+      name: P_U_LeftStride
       rect:
         serializedVersion: 2
         x: 2210
@@ -181,7 +181,7 @@ TextureImporter:
         width: 469
         height: 637
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Up_Walk_0: 1187746580
-      Player_Up_Walk_1: 1082745069
-      Player_Up_Walk_2: -403593967
-      Player_Up_Walk_3: 856482993
+      P_U_Idle: 1187746580
+      P_U_Idle2: -403593967
+      P_U_LeftStride: 856482993
+      P_U_RightStride: 1082745069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

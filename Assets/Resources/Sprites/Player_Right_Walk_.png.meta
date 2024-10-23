@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Right_Walk__0
+      name: P_R_Idle
       rect:
         serializedVersion: 2
         x: 121
@@ -118,7 +118,7 @@ TextureImporter:
         width: 443
         height: 674
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Right_Walk__1
+      name: P_R_RightStride
       rect:
         serializedVersion: 2
         x: 791
@@ -139,7 +139,7 @@ TextureImporter:
         width: 443
         height: 674
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Right_Walk__2
+      name: P_R_Idle2
       rect:
         serializedVersion: 2
         x: 1510
@@ -160,7 +160,7 @@ TextureImporter:
         width: 442
         height: 674
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Right_Walk__3
+      name: P_R_LeftStride
       rect:
         serializedVersion: 2
         x: 2194
@@ -181,7 +181,7 @@ TextureImporter:
         width: 441
         height: 673
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Right_Walk__0: -980066858
-      Player_Right_Walk__1: -750529422
-      Player_Right_Walk__2: 835142705
-      Player_Right_Walk__3: -532522618
+      P_R_Idle: -980066858
+      P_R_Idle2: 835142705
+      P_R_LeftStride: -532522618
+      P_R_RightStride: -750529422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

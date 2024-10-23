@@ -1162,9 +1162,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 718c076296a12a44983bbadb7e213870, type: 2}
   - {fileID: 11400000, guid: 16d4713dee4cf52498087e0c7287f039, type: 2}
   - {fileID: 11400000, guid: 7a64119b66005924d9175fa3454d6400, type: 2}
-  - {fileID: 11400000, guid: 06b0f03d3f59ceb4baab750a29c0891b, type: 2}
   - {fileID: 11400000, guid: 65084fa8b3aaf374cbfe5662a451417b, type: 2}
   npcPrefab: {fileID: 5279601091294529985, guid: 55d262761f0958a41997ca3125e6229c, type: 3}
+  targetSceneName: Living Room
+  spawnPointName: spawnPoint_LR
   livingRoomSpawnPoint: {fileID: 386579574}
 --- !u!4 &368687684
 Transform:
@@ -1386,7 +1387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 538, y: -242}
+  m_AnchoredPosition: {x: 153, y: -234}
   m_SizeDelta: {x: 641.051, y: 474.8601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &414366871
@@ -3124,12 +3125,12 @@ MonoBehaviour:
   roomConnections:
   - fromRoomName: Living Room
     toRoomName: Kitchen
-    doorwayPosition: {x: -417, y: -156, z: 0}
-    targetEntrancePosition: {x: -350, y: -140, z: 0}
+    doorwayPosition: {x: -362, y: -178, z: 0}
+    targetEntrancePosition: {x: -325, y: -380, z: 0}
   - fromRoomName: Kitchen
     toRoomName: Living Room
-    doorwayPosition: {x: -359, y: -380, z: 0}
-    targetEntrancePosition: {x: -370, y: -380, z: 0}
+    doorwayPosition: {x: -355, y: -378, z: 0}
+    targetEntrancePosition: {x: -400, y: -380, z: 0}
   - fromRoomName: Living Room
     toRoomName: Garden
     doorwayPosition: {x: -417, y: -156, z: 0}
@@ -3610,9 +3611,9 @@ MonoBehaviour:
   characterNameText: {fileID: 1253776515}
   choiceButtons:
   - {fileID: 1542460090}
-  characterImage: {fileID: 0}
-  dialogueCanvas: {fileID: 0}
-  dialogueJson: {fileID: 4900000, guid: 766beee5ecbd3e046bf25e051ed92f5f, type: 3}
+  characterImage: {fileID: 1049121158}
+  dialogueCanvas: {fileID: 407389410}
+  dialogueJson: {fileID: 4900000, guid: 401cebf9d2b237448b7e353bdb110ba5, type: 3}
   dialogue:
     characterName: 
     sentences: []

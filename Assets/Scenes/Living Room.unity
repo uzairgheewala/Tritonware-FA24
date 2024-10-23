@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoomName: Kitchen
-  targetEntrancePosition: {x: -325, y: -350, z: 0}
+  targetEntrancePosition: {x: -325, y: -380, z: 0}
 --- !u!224 &351472891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoomName: Living Room
-  targetEntrancePosition: {x: 9, y: 5, z: 0}
+  targetEntrancePosition: {x: -550, y: -150, z: 0}
 --- !u!224 &1480205502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -558, y: -140}
+  m_AnchoredPosition: {x: -551, y: -107}
   m_SizeDelta: {x: 98.4017, y: 102.8246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1497109803
@@ -2420,8 +2420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2862a4a51b27534bbe5d7c0088cc9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRoomName: Garage
-  targetEntrancePosition: {x: 9, y: 5, z: 0}
+  targetRoomName: Living Room
+  targetEntrancePosition: {x: -850, y: -180, z: 0}
 --- !u!224 &1755967417
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2438,7 +2438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -870, y: -143}
+  m_AnchoredPosition: {x: -870, y: -126}
   m_SizeDelta: {x: 98.4017, y: 102.8246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1759912207

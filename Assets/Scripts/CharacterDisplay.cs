@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEditor.Animations;
 
 public class CharacterDisplay : MonoBehaviour, IPointerClickHandler
 {

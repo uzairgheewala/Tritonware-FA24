@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class CharacterManager : MonoBehaviour
 
     public List<CharacterBase> allCharacters;
     public GameObject npcPrefab; // Assign the NPC prefab here
+    public string targetSceneName = "Living Room"; // Ensure this matches your scene name
+    public string spawnPointName = "spawnPoint_LR"; // Name of the spawn point GameObject in LivingRoom
+
     public Transform livingRoomSpawnPoint; // Assign a spawn point in LivingRoom scene
     private Dictionary<string, CharacterInstance> activeCharacters;
     private Dictionary<string, GameObject> characterGameObjects;
@@ -36,6 +39,9 @@ public class CharacterManager : MonoBehaviour
         {
             character.OnRelationshipChanged.AddListener(HandleRelationshipChange);
         }
+
+        // Start the spawning process
+        StartCoroutine(EnsureSceneAndSpawnCharacters());
     }
 
     void HandleRelationshipChange(string otherCharacterName, float newValue)
@@ -55,7 +61,68 @@ public class CharacterManager : MonoBehaviour
             Logger.Log($"Character {character.characterName} initialized.");
 
             // Instantiate NPC in the LivingRoom scene
-            SpawnCharacterInScene(character, "Living Room");
+            //SpawnCharacterInScene(character, "Living Room");
+        }
+    }
+
+    IEnumerator EnsureSceneAndSpawnCharacters()
+    {
+        // Check if LivingRoom is already loaded
+        Scene livingRoomScene = SceneManager.GetSceneByName(targetSceneName);
+        if (!livingRoomScene.IsValid())
+        {
+            // Load LivingRoom additively
+            Logger.Log($"Loading scene: {targetSceneName}");
+            AsyncOperation loadOperation = SceneManager.LoadSceneAsync(targetSceneName, LoadSceneMode.Additive);
+
+            // Wait until the scene is loaded
+            while (!loadOperation.isDone)
+            {
+                yield return null;
+            }
+
+            livingRoomScene = SceneManager.GetSceneByName(targetSceneName);
+            if (!livingRoomScene.IsValid())
+            {
+                Logger.LogError($"Failed to load scene: {targetSceneName}");
+                yield break;
+            }
+            Logger.Log($"Scene {targetSceneName} loaded successfully.");
+        }
+        else
+        {
+            Logger.Log($"Scene {targetSceneName} is already loaded.");
+        }
+
+        // Set LivingRoom as the active scene
+        /*
+        bool setActive = SceneManager.SetActiveScene(livingRoomScene);
+        if (setActive)
+        {
+            Logger.Log($"Active scene set to: {livingRoomScene.name}");
+        }
+        else
+        {
+            Logger.LogWarning($"Failed to set active scene to: {livingRoomScene.name}");
+            //yield break;
+        }*/
+
+        // Find the spawn point in LivingRoom
+        GameObject spawnPointGO = GameObject.Find(spawnPointName);
+        if (spawnPointGO == null)
+        {
+            Logger.LogWarning($"Spawn point '{spawnPointName}' not found in scene {livingRoomScene.name}.");
+            //yield break;
+        }
+
+        Transform spawnPoint = spawnPointGO.transform;
+        Logger.Log($"Spawn point '{spawnPointName}' found at position {spawnPoint.position}.");
+
+        // Spawn all NPCs
+        foreach (var character in allCharacters)
+        {
+            SpawnCharacterInScene(character, targetSceneName);
+            yield return null; // Yield to allow other operations
         }
     }
 

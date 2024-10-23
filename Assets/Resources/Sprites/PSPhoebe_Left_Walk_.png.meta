@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PSLeftStride
+      name: PS_L_RightStride
       rect:
         serializedVersion: 2
         x: 86
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSIdle1
+      name: PS_L_Idle
       rect:
         serializedVersion: 2
         x: 462
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSRightStride
+      name: PS_L_LeftStride
       rect:
         serializedVersion: 2
         x: 790
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PSIdle2
+      name: PS_L_Idle2
       rect:
         serializedVersion: 2
         x: 1174
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PSIdle1: -869361554
-      PSIdle2: 2004243784
-      PSLeftStride: -900330887
-      PSRightStride: -1764461512
+      PS_L_Idle: -869361554
+      PS_L_Idle2: 2004243784
+      PS_L_LeftStride: -1764461512
+      PS_L_RightStride: -900330887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

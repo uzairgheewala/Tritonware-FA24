@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ab03e371963af45b8343fb194db762, type: 3}
   m_Name: Scientist
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Phoebe
   age: 0
-  role: 
+  role: Scientist
   characterSprite: {fileID: 0}
   idleSprites: []
   walkingSprites: []

@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LeftStride
+      name: DW_L_RightStride
       rect:
         serializedVersion: 2
         x: 68
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle
+      name: DW_L_Idle
       rect:
         serializedVersion: 2
         x: 461
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightStride
+      name: DW_L_LeftStride
       rect:
         serializedVersion: 2
         x: 784
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle2
+      name: DW_L_Idle2
       rect:
         serializedVersion: 2
         x: 1190
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle: 1337222761
-      Idle2: -48501260
-      LeftStride: 1528029712
-      RightStride: -760250534
+      DW_L_Idle: 1337222761
+      DW_L_Idle2: -48501260
+      DW_L_LeftStride: -760250534
+      DW_L_RightStride: 1528029712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

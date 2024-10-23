@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DLeftStride
+      name: D_L_RightStride
       rect:
         serializedVersion: 2
         x: 80
@@ -118,7 +118,7 @@ TextureImporter:
         width: 192
         height: 335
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DIdle
+      name: D_L_Idle
       rect:
         serializedVersion: 2
         x: 451
@@ -139,7 +139,7 @@ TextureImporter:
         width: 175
         height: 338
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DRightStride
+      name: D_L_LeftStride
       rect:
         serializedVersion: 2
         x: 787
@@ -160,7 +160,7 @@ TextureImporter:
         width: 198
         height: 339
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Didle2
+      name: D_L_Idle2
       rect:
         serializedVersion: 2
         x: 1146
@@ -181,7 +181,7 @@ TextureImporter:
         width: 176
         height: 338
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DIdle: 1603081947
-      DLeftStride: -1469325158
-      DRightStride: -1157993782
-      Didle2: -1591350154
+      D_L_Idle: 1603081947
+      D_L_Idle2: -1591350154
+      D_L_LeftStride: -1157993782
+      D_L_RightStride: -1469325158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

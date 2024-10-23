@@ -87,6 +87,7 @@ public class CustomSceneManager : MonoBehaviour
         Logger.Log($"Active scene set to {loadedScene.name}");
 
         // Optionally, unload the previous room
+        /*
         if (!string.IsNullOrEmpty(currentRoom))
         {
             Logger.Log($"Unloading room: {currentRoom}");
@@ -99,7 +100,7 @@ public class CustomSceneManager : MonoBehaviour
             }
 
             Logger.Log($"Room {currentRoom} unloaded successfully.");
-        }
+        }*/
 
         // Update current room
         currentRoom = targetRoomName;
@@ -124,16 +125,17 @@ public class CustomSceneManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Logger.Log($"Scene loaded: {scene.name}");
+        bool setActive = false;
 
         // Set the loaded scene as the active scene
-        bool setActive = SceneManager.SetActiveScene(scene);
+        setActive = SceneManager.SetActiveScene(scene);
         if (setActive)
         {
             Logger.Log($"Active scene set to: {scene.name}");
         }
         else
         {
-            Logger.LogError($"Failed to set active scene to: {scene.name}");
+            Logger.LogWarning($"Failed to set active scene to: {scene.name}");
         }
     }
 }

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: J_D_Idle
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 29
+        width: 416
+        height: 642
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44214381fd8d6641b77f88434edad43
+      internalID: 60464566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J_D_RightStride
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 29
+        width: 407
+        height: 624
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6769b19bef0b53d448510422d9a80cf3
+      internalID: -289778903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J_D_Idle2
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 29
+        width: 407
+        height: 633
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b8ef2a24dda1241a3336ade3b28ceb
+      internalID: 742433456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J_D_LeftStride
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 38
+        width: 416
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e8a1487b791df4aa8cef9a064be60d
+      internalID: -1834408882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      J_D_Idle: 60464566
+      J_D_Idle2: 742433456
+      J_D_LeftStride: -1834408882
+      J_D_RightStride: -289778903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
